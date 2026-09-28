@@ -1,0 +1,33 @@
+# The repo is a single npm workspace with one root lockfile, so npm updates are managed
+# from "/" only. Per-package entries pointed at lockfiles the build never used, which is
+# why their update PRs failed CI.
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    cooldown:
+      default-days: 7
+    labels: ["dependencies", "github-actions"]
+
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    cooldown:
+      default-days: 7
+    open-pull-requests-limit: 5
+    labels: ["dependencies", "npm"]
+    versioning-strategy: auto
+    groups:
+      midnight:
+        patterns: ["@midnight-ntwrk/*"]
+      frontend-tooling:
+        patterns: ["vite", "vite-*", "@vitejs/*", "vite-plugin-*"]
+      eslint-tooling:
+        patterns: ["eslint", "eslint-*", "@eslint/*", "@typescript-eslint/*", "typescript-eslint"]
+      react-ecosystem:
+        patterns: ["react", "react-dom", "@types/react", "@types/react-dom", "@mui/*", "@emotion/*"]
+      testing:
+        patterns: ["@types/*", "typescript", "vitest"]
