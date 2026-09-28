@@ -12,7 +12,7 @@ ballots, so nobody has to trust the organizer.
 
 | | |
 |---|---|
-| 🌐 **Live app** | **<https://private-pooling.vercel.app>** |
+| 🌐 **Live app** | **<https://ballotbox-beige.vercel.app/>** |
 | 📜 **Preprod contract** | `7423df36535c53ec590fd268f36771b9b9bd63ab741706062ac820f7b59f9351` ([deployment record](./deployments/preprod.json)) |
 | 𝕏 **Product profile** | **[@BallotMidnightt](https://x.com/BallotMidnightt)** |
 | 🎬 **Demo video** | [Watch the walkthrough](https://drive.google.com/drive/folders/17Wp-457jbYBe5BfflG4Z4f4I7z0sTcat?usp=sharing) |
@@ -21,7 +21,7 @@ ballots, so nobody has to trust the organizer.
 | 📖 **Docs** | [User guide](./docs/USER_GUIDE.md) · [Architecture](./docs/ARCHITECTURE.md) · [Privacy model](./PRIVACY.md) · [Deployment](./docs/DEPLOYMENT.md) · [Integration](./api/INTEGRATION.md) |
 
 <p align="center">
-  <a href="https://private-pooling.vercel.app"><img src="./docs/screenshots/landing-desktop.png" alt="BallotBox landing page: the featured Preprod poll with its live turnout, and the five-minute setup checklist" width="820"></a>
+  <a href="https://ballotbox-beige.vercel.app"><img src="./docs/screenshots/landing-desktop.png" alt="BallotBox landing page: the featured Preprod poll with its live turnout, and the five-minute setup checklist" width="820"></a>
 </p>
 
 > **Try it in five minutes:** open the live app, follow *“New here?”*, press **Join this
