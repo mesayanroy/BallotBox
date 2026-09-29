@@ -1,5 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { AppBar, Box, IconButton, Link, Tooltip, Typography, Drawer, List, ListItem, ListItemButton, ListItemText } from '@mui/material';
+import {
+  AppBar,
+  Box,
+  IconButton,
+  Link,
+  Tooltip,
+  Typography,
+  Drawer,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+} from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import XIcon from '@mui/icons-material/X';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
@@ -214,12 +226,7 @@ export const Header: React.FC = () => {
         <List>
           {NAV.map(({ label, href }) => (
             <ListItem key={href} disablePadding>
-              <ListItemButton
-                component="a"
-                href={href}
-                onClick={() => setMobileOpen(false)}
-                sx={{ py: 1.5 }}
-              >
+              <ListItemButton component="a" href={href} onClick={() => setMobileOpen(false)} sx={{ py: 1.5 }}>
                 <ListItemText
                   primary={
                     <Typography

@@ -4,7 +4,7 @@ import { keyframes } from '@emotion/react';
 import CodeIcon from '@mui/icons-material/Code';
 import FolderIcon from '@mui/icons-material/Folder';
 import { LINKS, NETWORK_ID, TRACTION } from '../../config/product';
-import { display, mono, tokens } from '../../config/theme';
+import { display, mono } from '../../config/theme';
 import { VideoText } from '../../registry/magicui/video-text';
 import { Highlighter } from '../../registry/magicui/highlighter';
 import { Tree, type TreeViewElement } from '../../registry/magicui/file-tree';
@@ -56,9 +56,7 @@ const ELEMENTS: TreeViewElement[] = [
         type: 'folder',
         isSelectable: true,
         name: 'lib',
-        children: [
-          { id: 'utils', isSelectable: true, name: 'utils.ts' },
-        ],
+        children: [{ id: 'utils', isSelectable: true, name: 'utils.ts' }],
       },
       {
         id: 'app',
@@ -82,9 +80,7 @@ const ELEMENTS: TreeViewElement[] = [
             type: 'folder',
             isSelectable: true,
             name: 'ui',
-            children: [
-              { id: 'button', isSelectable: true, name: 'button.tsx' },
-            ],
+            children: [{ id: 'button', isSelectable: true, name: 'button.tsx' }],
           },
           { id: 'footer', isSelectable: true, name: 'footer.tsx' },
         ],
@@ -234,11 +230,11 @@ export const Hero: React.FC<HeroProps> = ({ primaryLabel, onPrimary }) => {
           </Box>
 
           {/* Magic UI VideoText Header Accent */}
-          <Box sx={{ height: 45, width: '100%', maxWidth: 420, mx: { xs: 'auto', lg: 0 }, mb: 1.5, overflow: 'hidden' }}>
+          <Box
+            sx={{ height: 45, width: '100%', maxWidth: 420, mx: { xs: 'auto', lg: 0 }, mb: 1.5, overflow: 'hidden' }}
+          >
             <VideoText src="https://cdn.magicui.design/ocean-small.webm">
-              <span style={{ fontSize: '1.8rem', letterSpacing: '0.1em', color: '#5fe3c8' }}>
-                MIDNIGHT ZK PRIVACY
-              </span>
+              <span style={{ fontSize: '1.8rem', letterSpacing: '0.1em', color: '#5fe3c8' }}>MIDNIGHT ZK PRIVACY</span>
             </VideoText>
           </Box>
 
@@ -438,12 +434,8 @@ export const Hero: React.FC<HeroProps> = ({ primaryLabel, onPrimary }) => {
                 justifyContent: 'space-between',
               }}
             >
-              <Typography sx={{ fontFamily: mono, fontSize: 10, color: '#94a3b8' }}>
-                ✦ ZK Contract Explorer
-              </Typography>
-              <Typography sx={{ fontFamily: mono, fontSize: 10, color: '#5fe3c8' }}>
-                Midnight v4.1
-              </Typography>
+              <Typography sx={{ fontFamily: mono, fontSize: 10, color: '#94a3b8' }}>✦ ZK Contract Explorer</Typography>
+              <Typography sx={{ fontFamily: mono, fontSize: 10, color: '#5fe3c8' }}>Midnight v4.1</Typography>
             </Box>
           </Box>
         </Box>

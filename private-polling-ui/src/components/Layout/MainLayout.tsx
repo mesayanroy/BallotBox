@@ -1,6 +1,5 @@
 import React from 'react';
-import { Box, Link, Typography, Chip } from '@mui/material';
-import ShieldCheckIcon from '@mui/icons-material/ShieldOutlined';
+import { Box, Link, Typography } from '@mui/material';
 import LaunchIcon from '@mui/icons-material/Launch';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import XIcon from '@mui/icons-material/X';
@@ -101,7 +100,6 @@ const Footer: React.FC = () => (
         zIndex: 1,
       }}
     >
-
       {/* Footer Main Grid */}
       <Box
         sx={{
@@ -149,9 +147,7 @@ const Footer: React.FC = () => (
               alt="Midnight Network"
               sx={{ height: 22, opacity: 0.85, filter: 'brightness(1.2)' }}
             />
-            <Typography sx={{ fontFamily: mono, fontSize: 11, color: '#64748b' }}>
-              Built on Midnight Network
-            </Typography>
+            <Typography sx={{ fontFamily: mono, fontSize: 11, color: '#64748b' }}>Built on Midnight Network</Typography>
           </Box>
         </Box>
 

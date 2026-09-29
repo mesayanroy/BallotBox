@@ -77,7 +77,8 @@ export const TerminalSection: React.FC = () => {
               mx: 'auto',
             }}
           >
-            Inspect how BallotBox creates zero-knowledge proofs locally in your browser and registers state updates on Midnight.
+            Inspect how BallotBox creates zero-knowledge proofs locally in your browser and registers state updates on
+            Midnight.
           </Typography>
         </Box>
 
@@ -92,7 +93,7 @@ export const TerminalSection: React.FC = () => {
           <TypingAnimation delay={1500}>$ ballotbox poll info --id 0x4e29b</TypingAnimation>
 
           <AnimatedSpan delay={2200} className="text-purple-400">
-            [Poll #0x4e29b] "Protocol Governance 2026" | Deadline: Block #1,048,500 | Quorum: 50 voters
+            [Poll #0x4e29b] &quot;Protocol Governance 2026&quot; | Deadline: Block #1,048,500 | Quorum: 50 voters
           </AnimatedSpan>
 
           <TypingAnimation delay={3000}>$ zk-prover generate-proof --ballot encrypted_vote.json</TypingAnimation>

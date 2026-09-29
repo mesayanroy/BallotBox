@@ -121,7 +121,8 @@ export const Features: React.FC = () => (
           </Highlighter>
         </Typography>
         <Typography sx={{ fontFamily: mono, fontSize: 13.5, color: '#a8aed3', lineHeight: 1.7 }}>
-          Your ballot parameters never touch a central server unencrypted. Midnight’s Compact ZK circuits prove voter eligibility locally before committing transactions on-chain.
+          Your ballot parameters never touch a central server unencrypted. Midnight’s Compact ZK circuits prove voter
+          eligibility locally before committing transactions on-chain.
         </Typography>
       </Box>
 

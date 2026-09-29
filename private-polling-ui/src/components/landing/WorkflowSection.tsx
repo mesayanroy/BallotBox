@@ -6,7 +6,7 @@ import HowToVoteIcon from '@mui/icons-material/HowToVote';
 import AssessmentIcon from '@mui/icons-material/Assessment';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import { display, mono, tokens } from '../../config/theme';
+import { display, mono } from '../../config/theme';
 import { Highlighter } from '../../registry/magicui/highlighter';
 
 const STEPS = [
@@ -316,9 +316,7 @@ export const WorkflowSection: React.FC = () => {
               {current.details.map((item, i) => (
                 <Box key={i} sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.25 }}>
                   <CheckCircleIcon sx={{ color: current.color, fontSize: 18, mt: 0.2 }} />
-                  <Typography sx={{ fontSize: 13.5, color: '#e2e8f0', lineHeight: 1.5 }}>
-                    {item}
-                  </Typography>
+                  <Typography sx={{ fontSize: 13.5, color: '#e2e8f0', lineHeight: 1.5 }}>{item}</Typography>
                 </Box>
               ))}
             </Box>
@@ -405,11 +403,9 @@ export const WorkflowSection: React.FC = () => {
               }}
             >
               <Typography sx={{ fontSize: 10, color: '#64748b', mb: 1, textTransform: 'uppercase' }}>
-                // Compact ZK Smart Contract Code
+                Compact ZK Smart Contract Code
               </Typography>
-              <pre style={{ margin: 0, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>
-                {current.codeSnippet}
-              </pre>
+              <pre style={{ margin: 0, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>{current.codeSnippet}</pre>
             </Box>
           </Box>
         </Box>

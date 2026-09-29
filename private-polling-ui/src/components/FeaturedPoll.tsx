@@ -94,7 +94,10 @@ export const FeaturedPoll: React.FC<FeaturedPollProps> = ({ address, fromInviteL
 
         {preview && (
           <>
-            <Typography variant="h6" sx={{ fontWeight: 700, color: tokens.ink, lineHeight: 1.35, mb: 1.5, fontSize: 18 }}>
+            <Typography
+              variant="h6"
+              sx={{ fontWeight: 700, color: tokens.ink, lineHeight: 1.35, mb: 1.5, fontSize: 18 }}
+            >
               {preview.question ?? 'No poll has been started on this contract yet.'}
             </Typography>
             {participating && (
@@ -144,7 +147,10 @@ export const FeaturedPoll: React.FC<FeaturedPollProps> = ({ address, fromInviteL
         >
           {participating ? 'Connect Wallet & Take Part' : 'Connect Wallet & Open Poll'}
         </Button>
-        <Typography variant="caption" sx={{ color: tokens.inkFaint, display: 'block', mt: 1.5, fontFamily: mono, textAlign: 'center' }}>
+        <Typography
+          variant="caption"
+          sx={{ color: tokens.inkFaint, display: 'block', mt: 1.5, fontFamily: mono, textAlign: 'center' }}
+        >
           Contract: {shortHex(address, 12, 10)}
         </Typography>
       </CardContent>

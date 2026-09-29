@@ -71,7 +71,16 @@ export const Terminal: React.FC<TerminalProps> = ({
           <span style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: '#ffbd2e' }} />
           <span style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: '#27c93f' }} />
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '11px', color: '#94a3b8', letterSpacing: '0.05em' }}>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '6px',
+            fontSize: '11px',
+            color: '#94a3b8',
+            letterSpacing: '0.05em',
+          }}
+        >
           <TerminalIcon className="w-3.5 h-3.5 text-cyan-400" />
           <span>{title}</span>
         </div>
@@ -180,12 +189,7 @@ export const TypingAnimation: React.FC<TypingAnimationProps> = ({
  * AnimatedSpan component
  * Reveals terminal response logs with smooth fade-in after specified delay.
  */
-export const AnimatedSpan: React.FC<AnimatedSpanProps> = ({
-  children,
-  delay = 0,
-  className = '',
-  style = {},
-}) => {
+export const AnimatedSpan: React.FC<AnimatedSpanProps> = ({ children, delay = 0, className = '', style = {} }) => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {

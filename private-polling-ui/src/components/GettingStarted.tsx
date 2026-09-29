@@ -89,8 +89,19 @@ export const GettingStarted: React.FC = () => {
       <Button
         onClick={toggle}
         fullWidth
-        endIcon={<ExpandMoreIcon sx={{ transform: open ? 'rotate(180deg)' : 'none', transition: '0.25s ease', color: '#5fe3c8' }} />}
-        sx={{ justifyContent: 'space-between', textTransform: 'none', color: tokens.ink, fontWeight: 700, px: 0, fontSize: 15 }}
+        endIcon={
+          <ExpandMoreIcon
+            sx={{ transform: open ? 'rotate(180deg)' : 'none', transition: '0.25s ease', color: '#5fe3c8' }}
+          />
+        }
+        sx={{
+          justifyContent: 'space-between',
+          textTransform: 'none',
+          color: tokens.ink,
+          fontWeight: 700,
+          px: 0,
+          fontSize: 15,
+        }}
       >
         New here? Get set up in about 5 minutes
       </Button>
@@ -123,7 +134,10 @@ export const GettingStarted: React.FC = () => {
           <Step n={3} title="Choose a proof server">
             Your wallet builds zero-knowledge proofs through a proof server. Use the hosted option in wallet settings if
             offered, or run one locally with Docker:{' '}
-            <Box component="code" sx={{ fontSize: 11, color: tokens.ink, backgroundColor: tokens.sunken, px: 1, py: 0.2, borderRadius: 1 }}>
+            <Box
+              component="code"
+              sx={{ fontSize: 11, color: tokens.ink, backgroundColor: tokens.sunken, px: 1, py: 0.2, borderRadius: 1 }}
+            >
               docker run -p 6300:6300 midnightntwrk/proof-server:8.0.3 midnight-proof-server -v
             </Box>
           </Step>
