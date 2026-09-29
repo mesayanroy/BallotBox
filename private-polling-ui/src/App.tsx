@@ -7,7 +7,9 @@ import { FeedbackButton } from './components/FeedbackButton';
 import { GettingStarted } from './components/GettingStarted';
 import { Hero } from './components/landing/Hero';
 import { Section } from './components/landing/Section';
-import { CtaBand, Faq, Features, HowItWorks } from './components/landing/Sections';
+import { CtaBand, Faq, Features } from './components/landing/Sections';
+import { WorkflowSection } from './components/landing/WorkflowSection';
+import { TerminalSection } from './components/landing/TerminalSection';
 import { FEATURED_CONTRACT_ADDRESS, pollFromUrl } from './config/product';
 import { type BoardDeployment } from './contexts';
 import { useDeployedBoardContext } from './hooks';
@@ -17,9 +19,14 @@ const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ b
 /**
  * Root component.
  *
- * Landing order is deliberate: the poll someone was invited to (or the featured public
- * poll) opens the app section right under the hero, then setup help, and "create your own"
- * comes last — most visitors come to vote. Marketing sections sit below the app.
+ * Landing flow:
+ * 1. Hero with Magic UI VideoText, Highlighter, FileTree (Tree), & cosmic visuals
+ * 2. Active app section (Featured poll, deployments, or poll creation)
+ * 3. Features with ZK Security showcase card
+ * 4. Interactive End-to-End ZK Workflow Section
+ * 5. FAQ
+ * 6. Terminal Section (placed directly above footer)
+ * 7. CTA Band
  */
 const App: React.FC = () => {
   const boardApiProvider = useDeployedBoardContext();
@@ -72,8 +79,9 @@ const App: React.FC = () => {
       </Section>
 
       <Features />
-      <HowItWorks />
+      <WorkflowSection />
       <Faq />
+      <TerminalSection />
       <CtaBand primaryLabel={primaryLabel} onPrimary={openSpotlight} />
       <FeedbackButton />
     </MainLayout>

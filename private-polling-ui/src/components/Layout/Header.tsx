@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { AppBar, Box, IconButton, Link, Tooltip, Typography } from '@mui/material';
+import { AppBar, Box, IconButton, Link, Tooltip, Typography, Drawer, List, ListItem, ListItemButton, ListItemText } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import XIcon from '@mui/icons-material/X';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 import { WalletConnectButton } from '../WalletConnectButton';
 import { BrandMark } from './BrandMark';
 import { heroInk } from '../landing/Hero';
@@ -11,12 +13,12 @@ import { display, mono, tokens } from '../../config/theme';
 
 const NAV: ReadonlyArray<{ label: string; href: string }> = [
   { label: 'Features', href: '#features' },
-  { label: 'How it works', href: '#how-it-works' },
+  { label: 'Workflow', href: '#how-it-works' },
+  { label: 'Console', href: '#terminal' },
   { label: 'FAQ', href: '#faq' },
-  { label: 'Live poll', href: '#app' },
+  { label: 'Live Poll', href: '#app' },
 ];
 
-/** True while the dark hero is still behind the header, so the header can switch to light-on-dark. */
 const useOverHero = (): boolean => {
   const [over, setOver] = useState(true);
   useEffect(() => {
@@ -35,12 +37,12 @@ const useOverHero = (): boolean => {
   return over;
 };
 
-/** Masthead — a floating glass bar: wordmark, section nav, network, outbound links, wallet. */
 export const Header: React.FC = () => {
   const dark = useOverHero();
   const ink = dark ? heroInk.text : tokens.ink;
   const soft = dark ? heroInk.textSoft : tokens.inkMuted;
   const line = dark ? heroInk.line : tokens.rule;
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const iconLinkSx = {
     color: soft,
@@ -49,137 +51,195 @@ export const Header: React.FC = () => {
   } as const;
 
   return (
-    <AppBar
-      position="fixed"
-      elevation={0}
-      data-testid="header"
-      sx={{
-        top: { xs: 10, md: 16 },
-        left: '50%',
-        right: 'auto',
-        transform: 'translateX(-50%)',
-        width: 'calc(100% - 24px)',
-        maxWidth: 1120,
-        zIndex: (theme) => theme.zIndex.appBar,
-        backgroundColor: dark ? 'rgba(7, 9, 24, 0.38)' : `${tokens.surface}e0`,
-        backdropFilter: 'saturate(1.4) blur(14px)',
-        backgroundImage: 'none',
-        border: `1px solid ${line}`,
-        borderRadius: 999,
-        boxShadow: dark ? 'none' : '0 6px 24px rgba(16, 19, 43, 0.06)',
-        transition: 'background-color 0.35s, border-color 0.35s, box-shadow 0.35s',
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        pl: { xs: 2, md: 3 },
-        pr: { xs: 1, md: 1.25 },
-        py: 1,
-        gap: 1,
-      }}
-    >
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 4, minWidth: 0 }}>
-        <Link href="#top" underline="none" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-          <BrandMark inverted={dark} />
-          <Typography
-            sx={{
-              fontFamily: display,
-              fontStyle: 'italic',
-              fontSize: 24,
-              letterSpacing: '-0.01em',
-              color: ink,
-              lineHeight: 1,
-              transition: 'color 0.35s',
-            }}
-          >
-            {PRODUCT.name}.
-          </Typography>
-        </Link>
-      </Box>
-
-      <Box
-        component="nav"
-        aria-label="Sections"
+    <>
+      <AppBar
+        position="fixed"
+        elevation={0}
+        data-testid="header"
         sx={{
-          display: { xs: 'none', md: 'flex' },
-          gap: 3.5,
-          position: 'absolute',
+          top: { xs: 10, md: 16 },
           left: '50%',
+          right: 'auto',
           transform: 'translateX(-50%)',
+          width: 'calc(100% - 24px)',
+          maxWidth: 1140,
+          zIndex: (theme) => theme.zIndex.appBar,
+          backgroundColor: dark ? 'rgba(7, 9, 24, 0.45)' : `${tokens.surface}e0`,
+          backdropFilter: 'saturate(1.4) blur(16px)',
+          backgroundImage: 'none',
+          border: `1px solid ${line}`,
+          borderRadius: 999,
+          boxShadow: dark ? '0 10px 30px rgba(0,0,0,0.5)' : '0 6px 24px rgba(16, 19, 43, 0.06)',
+          transition: 'all 0.35s ease',
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          pl: { xs: 2, md: 3 },
+          pr: { xs: 1, md: 1.25 },
+          py: 1,
+          gap: 1,
         }}
       >
-        {NAV.map(({ label, href }) => (
-          <Link
-            key={href}
-            href={href}
-            underline="none"
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 3, minWidth: 0 }}>
+          <Link href="#top" underline="none" sx={{ display: 'flex', alignItems: 'center', gap: 1.25 }}>
+            <BrandMark inverted={dark} />
+            <Typography
+              sx={{
+                fontFamily: display,
+                fontStyle: 'italic',
+                fontSize: 24,
+                letterSpacing: '-0.01em',
+                color: ink,
+                lineHeight: 1,
+                transition: 'color 0.35s',
+              }}
+            >
+              {PRODUCT.name}.
+            </Typography>
+          </Link>
+        </Box>
+
+        <Box
+          component="nav"
+          aria-label="Sections"
+          sx={{
+            display: { xs: 'none', md: 'flex' },
+            gap: 3.5,
+            position: 'absolute',
+            left: '50%',
+            transform: 'translateX(-50%)',
+          }}
+        >
+          {NAV.map(({ label, href }) => (
+            <Link
+              key={href}
+              href={href}
+              underline="none"
+              sx={{
+                fontFamily: mono,
+                fontSize: 11.5,
+                letterSpacing: '0.14em',
+                textTransform: 'uppercase',
+                color: soft,
+                transition: 'color 0.2s',
+                '&:hover': { color: '#5fe3c8' },
+              }}
+            >
+              {label}
+            </Link>
+          ))}
+        </Box>
+
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+          <Typography
             sx={{
               fontFamily: mono,
-              fontSize: 11.5,
+              fontSize: 10.5,
               letterSpacing: '0.14em',
               textTransform: 'uppercase',
-              color: soft,
-              transition: 'color 0.2s',
-              '&:hover': { color: ink },
+              color: '#5fe3c8',
+              border: `1px solid ${line}`,
+              borderRadius: 999,
+              px: 1.25,
+              py: 0.4,
+              mr: 0.5,
+              display: { xs: 'none', lg: 'block' },
             }}
           >
-            {label}
-          </Link>
-        ))}
-      </Box>
+            {NETWORK_ID}
+          </Typography>
 
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.25 }}>
-        <Typography
-          sx={{
-            fontFamily: mono,
-            fontSize: 10.5,
-            letterSpacing: '0.14em',
-            textTransform: 'uppercase',
-            color: dark ? '#a9b4ff' : tokens.caution,
-            border: `1px solid ${line}`,
-            borderRadius: 999,
-            px: 1.25,
-            py: 0.4,
-            mr: 0.75,
-            display: { xs: 'none', lg: 'block' },
-          }}
-        >
-          {NETWORK_ID}
-        </Typography>
-        <Tooltip title="User guide">
-          <IconButton component="a" href={LINKS.userGuide} target="_blank" rel="noopener noreferrer" sx={iconLinkSx}>
-            <MenuBookIcon fontSize="small" />
-          </IconButton>
-        </Tooltip>
-        {LINKS.x && (
-          <Tooltip title={`${PRODUCT.name} on X`}>
-            <IconButton component="a" href={LINKS.x} target="_blank" rel="noopener noreferrer" sx={iconLinkSx}>
-              <XIcon fontSize="small" />
+          <Tooltip title="User guide">
+            <IconButton component="a" href={LINKS.userGuide} target="_blank" rel="noopener noreferrer" sx={iconLinkSx}>
+              <MenuBookIcon fontSize="small" />
             </IconButton>
           </Tooltip>
-        )}
-        <Tooltip title="Source code">
-          <IconButton component="a" href={LINKS.github} target="_blank" rel="noopener noreferrer" sx={iconLinkSx}>
-            <GitHubIcon fontSize="small" />
+          {LINKS.x && (
+            <Tooltip title={`${PRODUCT.name} on X`}>
+              <IconButton component="a" href={LINKS.x} target="_blank" rel="noopener noreferrer" sx={iconLinkSx}>
+                <XIcon fontSize="small" />
+              </IconButton>
+            </Tooltip>
+          )}
+          <Tooltip title="Source code">
+            <IconButton component="a" href={LINKS.github} target="_blank" rel="noopener noreferrer" sx={iconLinkSx}>
+              <GitHubIcon fontSize="small" />
+            </IconButton>
+          </Tooltip>
+
+          <Box
+            sx={{
+              ml: 0.5,
+              '& .MuiButton-root': {
+                borderRadius: 999,
+                ...(dark && {
+                  color: heroInk.text,
+                  borderColor: heroInk.line,
+                  backgroundColor: 'rgba(238, 240, 255, 0.08)',
+                  '&:hover': { backgroundColor: 'rgba(238, 240, 255, 0.16)', borderColor: '#5fe3c8' },
+                }),
+              },
+            }}
+          >
+            <WalletConnectButton networkId={NETWORK_ID} />
+          </Box>
+
+          <IconButton
+            onClick={() => setMobileOpen(!mobileOpen)}
+            sx={{ display: { xs: 'inline-flex', md: 'none' }, color: ink }}
+          >
+            {mobileOpen ? <CloseIcon /> : <MenuIcon />}
           </IconButton>
-        </Tooltip>
-        <Box
-          sx={{
-            ml: 0.75,
-            // Pill-shape the wallet button to match the bar; lighten it while over the hero.
-            '& .MuiButton-root': {
-              borderRadius: 999,
-              ...(dark && {
-                color: heroInk.text,
-                borderColor: heroInk.line,
-                backgroundColor: 'rgba(238, 240, 255, 0.06)',
-                '&:hover': { backgroundColor: 'rgba(238, 240, 255, 0.12)', borderColor: 'rgba(238, 240, 255, 0.3)' },
-              }),
-            },
-          }}
-        >
-          <WalletConnectButton networkId={NETWORK_ID} />
         </Box>
-      </Box>
-    </AppBar>
+      </AppBar>
+
+      {/* Mobile Nav Drawer */}
+      <Drawer
+        anchor="top"
+        open={mobileOpen}
+        onClose={() => setMobileOpen(false)}
+        slotProps={{
+          paper: {
+            sx: {
+              backgroundColor: '#070918',
+              color: '#eef0ff',
+              pt: 10,
+              pb: 4,
+              px: 3,
+              borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+            },
+          },
+        }}
+      >
+        <List>
+          {NAV.map(({ label, href }) => (
+            <ListItem key={href} disablePadding>
+              <ListItemButton
+                component="a"
+                href={href}
+                onClick={() => setMobileOpen(false)}
+                sx={{ py: 1.5 }}
+              >
+                <ListItemText
+                  primary={
+                    <Typography
+                      sx={{
+                        fontFamily: mono,
+                        fontSize: 14,
+                        letterSpacing: '0.12em',
+                        textTransform: 'uppercase',
+                        color: '#eef0ff',
+                      }}
+                    >
+                      {label}
+                    </Typography>
+                  }
+                />
+              </ListItemButton>
+            </ListItem>
+          ))}
+        </List>
+      </Drawer>
+    </>
   );
 };
