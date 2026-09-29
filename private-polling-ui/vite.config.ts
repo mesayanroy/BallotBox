@@ -126,6 +126,9 @@ export default defineConfig({
   },
   // Add specific import configuration for more control
   resolve: {
+    alias: {
+      '@': resolve(__dirname, './src'),
+    },
     // Ensure WASM files are loaded properly
     extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.wasm'],
     mainFields: ['browser', 'module', 'main'],
