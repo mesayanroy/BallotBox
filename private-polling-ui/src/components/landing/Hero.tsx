@@ -125,20 +125,29 @@ export const Hero: React.FC<HeroProps> = ({ primaryLabel, onPrimary }) => {
     >
       {/* Background Images & Glows */}
       <Box aria-hidden sx={{ position: 'absolute', inset: 0, zIndex: -2, pointerEvents: 'none' }}>
-        {/* Cosmic Background Image overlay */}
+        {/* Stretched Cosmic Background Image */}
         <Box
           sx={{
             position: 'absolute',
-            top: 0,
-            left: 0,
+            inset: 0,
             width: '100%',
             height: '100%',
             backgroundImage: 'url(/images/hero-cosmic.png)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            opacity: 0.22,
-            mixBlendMode: 'screen',
+            backgroundRepeat: 'no-repeat',
+            opacity: 0.42,
+            filter: 'brightness(0.9) contrast(1.15)',
             animation: `${drift} 30s ease-in-out infinite`,
+          }}
+        />
+
+        {/* Radial dark vignette to preserve text legibility */}
+        <Box
+          sx={{
+            position: 'absolute',
+            inset: 0,
+            background: 'radial-gradient(ellipse at center, rgba(7, 9, 24, 0.45) 0%, rgba(7, 9, 24, 0.92) 85%)',
           }}
         />
 
