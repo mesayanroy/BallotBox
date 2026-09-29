@@ -1,9 +1,13 @@
 import React from 'react';
-import { Box, Link, Typography } from '@mui/material';
+import { Box, Link, Typography, Chip } from '@mui/material';
+import ShieldCheckIcon from '@mui/icons-material/ShieldOutlined';
+import LaunchIcon from '@mui/icons-material/Launch';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import XIcon from '@mui/icons-material/X';
 import { Header } from './Header';
 import { BrandMark } from './BrandMark';
 import { LINKS, NETWORK_ID, PRODUCT } from '../../config/product';
-import { microLabelSx, tokens } from '../../config/theme';
+import { display, mono, tokens } from '../../config/theme';
 
 const FooterLink: React.FC<React.PropsWithChildren<{ href: string; external?: boolean }>> = ({
   href,
@@ -13,95 +17,282 @@ const FooterLink: React.FC<React.PropsWithChildren<{ href: string; external?: bo
   <Link
     href={href}
     {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-    underline="hover"
-    sx={{ display: 'block', fontSize: 14, color: tokens.inkMuted, mb: 1.25, '&:hover': { color: tokens.ink } }}
+    underline="none"
+    sx={{
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 0.5,
+      fontSize: 13.5,
+      fontFamily: mono,
+      color: '#94a3b8',
+      mb: 1.5,
+      transition: 'color 0.2s ease, transform 0.2s ease',
+      '&:hover': {
+        color: '#5fe3c8',
+        transform: 'translateX(3px)',
+      },
+    }}
   >
     {children}
+    {external && <LaunchIcon sx={{ fontSize: 11, opacity: 0.7 }} />}
   </Link>
 );
 
 const FooterColumn: React.FC<React.PropsWithChildren<{ title: string }>> = ({ title, children }) => (
-  <Box>
-    <Typography sx={{ ...microLabelSx, color: tokens.ink, mb: 2 }}>{title}</Typography>
+  <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+    <Typography
+      sx={{
+        fontFamily: mono,
+        fontSize: 11,
+        fontWeight: 700,
+        letterSpacing: '0.16em',
+        textTransform: 'uppercase',
+        color: '#5fe3c8',
+        mb: 2.5,
+      }}
+    >
+      {title}
+    </Typography>
     {children}
   </Box>
 );
 
+/**
+ * Premium Dark Moonlight Footer
+ * Features ZK light spectrum graphics, brand mark, midnight logo, and links.
+ */
 const Footer: React.FC = () => (
-  <Box component="footer" sx={{ borderTop: `1px solid ${tokens.rule}`, backgroundColor: tokens.surface }}>
+  <Box
+    component="footer"
+    sx={{
+      position: 'relative',
+      backgroundColor: '#050714',
+      color: '#eef0ff',
+      borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+      overflow: 'hidden',
+    }}
+  >
+    {/* Ambient Prism Background Graphic Overlay */}
+    <Box
+      aria-hidden
+      sx={{
+        position: 'absolute',
+        top: 0,
+        right: 0,
+        width: '600px',
+        height: '100%',
+        backgroundImage: 'url(/images/hero-prism.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        opacity: 0.08,
+        mixBlendMode: 'screen',
+        pointerEvents: 'none',
+      }}
+    />
+
     <Box
       sx={{
-        maxWidth: 1180,
+        maxWidth: 1200,
         mx: 'auto',
         px: { xs: 2.5, md: 5 },
         pt: { xs: 6, md: 8 },
-        pb: 4,
-        display: 'grid',
-        gridTemplateColumns: { xs: '1fr 1fr', md: '2fr 1fr 1fr 1fr' },
-        gap: 4,
+        pb: 5,
+        position: 'relative',
+        zIndex: 1,
       }}
     >
-      <Box sx={{ gridColumn: { xs: '1 / -1', md: 'auto' }, maxWidth: 320 }}>
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.5 }}>
-          <BrandMark />
-          <Typography variant="h6" sx={{ lineHeight: 1 }}>
-            {PRODUCT.name}
+      {/* Top Banner Card Inside Footer */}
+      <Box
+        sx={{
+          p: { xs: 3, md: 4 },
+          mb: { xs: 6, md: 8 },
+          borderRadius: 4,
+          backgroundColor: 'rgba(15, 23, 42, 0.6)',
+          border: '1px solid rgba(95, 227, 200, 0.2)',
+          backdropFilter: 'blur(16px)',
+          display: 'flex',
+          flexDirection: { xs: 'column', md: 'row' },
+          alignItems: { xs: 'flex-start', md: 'center' },
+          justifyContent: 'space-between',
+          gap: 3,
+          boxShadow: '0 10px 40px rgba(0, 0, 0, 0.4)',
+        }}
+      >
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+          <Box
+            sx={{
+              width: 48,
+              height: 48,
+              borderRadius: 3,
+              backgroundColor: 'rgba(95, 227, 200, 0.12)',
+              border: '1px solid rgba(95, 227, 200, 0.3)',
+              display: 'grid',
+              placeItems: 'center',
+              color: '#5fe3c8',
+            }}
+          >
+            <ShieldCheckIcon sx={{ fontSize: 26 }} />
+          </Box>
+          <Box>
+            <Typography sx={{ fontFamily: mono, fontSize: 14, fontWeight: 700, color: '#ffffff' }}>
+              Midnight Zero-Knowledge Protocol Engine
+            </Typography>
+            <Typography sx={{ fontFamily: mono, fontSize: 12, color: '#94a3b8', mt: 0.5 }}>
+              On-chain verifiable computation with end-to-end voter secrecy.
+            </Typography>
+          </Box>
+        </Box>
+
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, flexWrap: 'wrap' }}>
+          <Chip
+            label="ZK PROOFS: ACTIVE"
+            size="small"
+            sx={{
+              backgroundColor: 'rgba(95, 227, 200, 0.15)',
+              color: '#5fe3c8',
+              fontFamily: mono,
+              fontSize: 10,
+              fontWeight: 700,
+              border: '1px solid rgba(95, 227, 200, 0.3)',
+            }}
+          />
+          <Chip
+            label={`NETWORK: ${NETWORK_ID.toUpperCase()}`}
+            size="small"
+            sx={{
+              backgroundColor: 'rgba(56, 189, 248, 0.15)',
+              color: '#38bdf8',
+              fontFamily: mono,
+              fontSize: 10,
+              fontWeight: 700,
+              border: '1px solid rgba(56, 189, 248, 0.3)',
+            }}
+          />
+        </Box>
+      </Box>
+
+      {/* Footer Main Grid */}
+      <Box
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', md: '2.2fr 1fr 1fr 1fr' },
+          gap: { xs: 5, md: 4 },
+        }}
+      >
+        {/* Brand Column */}
+        <Box sx={{ pr: { md: 4 } }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 2 }}>
+            <BrandMark inverted />
+            <Typography
+              sx={{
+                fontFamily: display,
+                fontStyle: 'italic',
+                fontSize: 28,
+                letterSpacing: '-0.01em',
+                color: '#ffffff',
+                lineHeight: 1,
+              }}
+            >
+              {PRODUCT.name}.
+            </Typography>
+          </Box>
+
+          <Typography
+            sx={{
+              fontFamily: mono,
+              fontSize: 13,
+              color: '#94a3b8',
+              lineHeight: 1.7,
+              mb: 3,
+              maxWidth: 320,
+            }}
+          >
+            {PRODUCT.tagline}. Anonymous ballots, public arithmetic, zero compromise.
+          </Typography>
+
+          {/* Midnight Network Co-brand Badge */}
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
+            <Box
+              component="img"
+              src="/midnight-logo.png"
+              alt="Midnight Network"
+              sx={{ height: 22, opacity: 0.85, filter: 'brightness(1.2)' }}
+            />
+            <Typography sx={{ fontFamily: mono, fontSize: 11, color: '#64748b' }}>
+              Built on Midnight Network
+            </Typography>
+          </Box>
+        </Box>
+
+        {/* Product Column */}
+        <FooterColumn title="Product">
+          <FooterLink href="#features" external={false}>
+            Features
+          </FooterLink>
+          <FooterLink href="#how-it-works" external={false}>
+            ZK Workflow
+          </FooterLink>
+          <FooterLink href="#terminal" external={false}>
+            Console Log
+          </FooterLink>
+          <FooterLink href="#app" external={false}>
+            Live Poll App
+          </FooterLink>
+          <FooterLink href="#faq" external={false}>
+            FAQ
+          </FooterLink>
+        </FooterColumn>
+
+        {/* Resources Column */}
+        <FooterColumn title="Resources">
+          <FooterLink href={LINKS.userGuide}>User Guide</FooterLink>
+          <FooterLink href={`${LINKS.github}/blob/main/PRIVACY.md`}>Privacy Model</FooterLink>
+          <FooterLink href={`${LINKS.github}/blob/main/docs/ARCHITECTURE.md`}>Architecture</FooterLink>
+          {LINKS.feedbackForm && <FooterLink href={LINKS.feedbackForm}>Give Feedback</FooterLink>}
+        </FooterColumn>
+
+        {/* Community Column */}
+        <FooterColumn title="Community">
+          <FooterLink href={LINKS.github}>
+            <GitHubIcon sx={{ fontSize: 14, mr: 0.5 }} /> GitHub
+          </FooterLink>
+          {LINKS.x && (
+            <FooterLink href={LINKS.x}>
+              <XIcon sx={{ fontSize: 14, mr: 0.5 }} /> X / Twitter
+            </FooterLink>
+          )}
+          <FooterLink href={LINKS.midnight}>Midnight Network</FooterLink>
+        </FooterColumn>
+      </Box>
+
+      {/* Bottom Sub-Footer Bar */}
+      <Box
+        sx={{
+          mt: { xs: 6, md: 8 },
+          pt: 3,
+          borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+          display: 'flex',
+          flexWrap: 'wrap',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          gap: 2,
+        }}
+      >
+        <Typography sx={{ fontFamily: mono, fontSize: 12, color: '#64748b' }}>
+          © {new Date().getFullYear()} {PRODUCT.name} · Apache-2.0 License · Built on Midnight Blockchain
+        </Typography>
+
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 3 }}>
+          <Typography sx={{ fontFamily: mono, fontSize: 11, color: '#5fe3c8' }}>
+            ✦ Preprod Network ID: {NETWORK_ID}
           </Typography>
         </Box>
-        <Typography variant="body2" sx={{ color: tokens.inkMuted, lineHeight: 1.65 }}>
-          {PRODUCT.tagline}. Anonymous ballots, public arithmetic.
-        </Typography>
       </Box>
-      <FooterColumn title="Product">
-        <FooterLink href="#features" external={false}>
-          Features
-        </FooterLink>
-        <FooterLink href="#how-it-works" external={false}>
-          How it works
-        </FooterLink>
-        <FooterLink href="#app" external={false}>
-          Live poll
-        </FooterLink>
-        <FooterLink href="#faq" external={false}>
-          FAQ
-        </FooterLink>
-      </FooterColumn>
-      <FooterColumn title="Resources">
-        <FooterLink href={LINKS.userGuide}>User guide</FooterLink>
-        <FooterLink href={`${LINKS.github}/blob/main/PRIVACY.md`}>Privacy model</FooterLink>
-        <FooterLink href={`${LINKS.github}/blob/main/docs/ARCHITECTURE.md`}>Architecture</FooterLink>
-        {LINKS.feedbackForm && <FooterLink href={LINKS.feedbackForm}>Give feedback</FooterLink>}
-      </FooterColumn>
-      <FooterColumn title="Community">
-        <FooterLink href={LINKS.github}>GitHub</FooterLink>
-        {LINKS.x && <FooterLink href={LINKS.x}>X</FooterLink>}
-        <FooterLink href={LINKS.midnight}>Midnight</FooterLink>
-      </FooterColumn>
-    </Box>
-    <Box
-      sx={{
-        maxWidth: 1180,
-        mx: 'auto',
-        px: { xs: 2.5, md: 5 },
-        py: 3,
-        borderTop: `1px solid ${tokens.rule}`,
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'space-between',
-        gap: 1,
-      }}
-    >
-      <Typography variant="caption" sx={{ color: tokens.inkMuted }}>
-        © {new Date().getFullYear()} {PRODUCT.name} · Apache-2.0 · Built on Midnight
-      </Typography>
-      <Typography variant="caption" sx={{ color: tokens.inkMuted }}>
-        Network: {NETWORK_ID}
-      </Typography>
     </Box>
   </Box>
 );
 
-/** Page shell: sticky header, the landing sections and app passed in as children, footer. */
+/** Page shell: sticky header, the landing sections and app passed in as children, premium footer. */
 export const MainLayout: React.FC<React.PropsWithChildren> = ({ children }) => (
   <Box id="top" sx={{ minHeight: '100vh', backgroundColor: tokens.paper, display: 'flex', flexDirection: 'column' }}>
     <Header />

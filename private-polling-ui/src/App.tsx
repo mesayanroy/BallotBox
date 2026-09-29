@@ -7,7 +7,7 @@ import { FeedbackButton } from './components/FeedbackButton';
 import { GettingStarted } from './components/GettingStarted';
 import { Hero } from './components/landing/Hero';
 import { Section } from './components/landing/Section';
-import { CtaBand, Faq, Features } from './components/landing/Sections';
+import { Faq, Features } from './components/landing/Sections';
 import { WorkflowSection } from './components/landing/WorkflowSection';
 import { TerminalSection } from './components/landing/TerminalSection';
 import { FEATURED_CONTRACT_ADDRESS, pollFromUrl } from './config/product';
@@ -26,7 +26,6 @@ const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ b
  * 4. Interactive End-to-End ZK Workflow Section
  * 5. FAQ
  * 6. Terminal Section (placed directly above footer)
- * 7. CTA Band
  */
 const App: React.FC = () => {
   const boardApiProvider = useDeployedBoardContext();
@@ -82,7 +81,6 @@ const App: React.FC = () => {
       <WorkflowSection />
       <Faq />
       <TerminalSection />
-      <CtaBand primaryLabel={primaryLabel} onPrimary={openSpotlight} />
       <FeedbackButton />
     </MainLayout>
   );
