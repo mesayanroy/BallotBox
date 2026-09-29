@@ -72,19 +72,19 @@ const Footer: React.FC = () => (
       overflow: 'hidden',
     }}
   >
-    {/* Ambient Prism Background Graphic Overlay */}
+    {/* Ambient Prism Background Graphic Overlay - stretched across entire footer */}
     <Box
       aria-hidden
       sx={{
         position: 'absolute',
-        top: 0,
-        right: 0,
-        width: '600px',
+        inset: 0,
+        width: '100%',
         height: '100%',
         backgroundImage: 'url(/images/hero-prism.png)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        opacity: 0.08,
+        backgroundRepeat: 'no-repeat',
+        opacity: 0.18,
         mixBlendMode: 'screen',
         pointerEvents: 'none',
       }}
@@ -101,75 +101,6 @@ const Footer: React.FC = () => (
         zIndex: 1,
       }}
     >
-      {/* Top Banner Card Inside Footer */}
-      <Box
-        sx={{
-          p: { xs: 3, md: 4 },
-          mb: { xs: 6, md: 8 },
-          borderRadius: 4,
-          backgroundColor: 'rgba(15, 23, 42, 0.6)',
-          border: '1px solid rgba(95, 227, 200, 0.2)',
-          backdropFilter: 'blur(16px)',
-          display: 'flex',
-          flexDirection: { xs: 'column', md: 'row' },
-          alignItems: { xs: 'flex-start', md: 'center' },
-          justifyContent: 'space-between',
-          gap: 3,
-          boxShadow: '0 10px 40px rgba(0, 0, 0, 0.4)',
-        }}
-      >
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-          <Box
-            sx={{
-              width: 48,
-              height: 48,
-              borderRadius: 3,
-              backgroundColor: 'rgba(95, 227, 200, 0.12)',
-              border: '1px solid rgba(95, 227, 200, 0.3)',
-              display: 'grid',
-              placeItems: 'center',
-              color: '#5fe3c8',
-            }}
-          >
-            <ShieldCheckIcon sx={{ fontSize: 26 }} />
-          </Box>
-          <Box>
-            <Typography sx={{ fontFamily: mono, fontSize: 14, fontWeight: 700, color: '#ffffff' }}>
-              Midnight Zero-Knowledge Protocol Engine
-            </Typography>
-            <Typography sx={{ fontFamily: mono, fontSize: 12, color: '#94a3b8', mt: 0.5 }}>
-              On-chain verifiable computation with end-to-end voter secrecy.
-            </Typography>
-          </Box>
-        </Box>
-
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, flexWrap: 'wrap' }}>
-          <Chip
-            label="ZK PROOFS: ACTIVE"
-            size="small"
-            sx={{
-              backgroundColor: 'rgba(95, 227, 200, 0.15)',
-              color: '#5fe3c8',
-              fontFamily: mono,
-              fontSize: 10,
-              fontWeight: 700,
-              border: '1px solid rgba(95, 227, 200, 0.3)',
-            }}
-          />
-          <Chip
-            label={`NETWORK: ${NETWORK_ID.toUpperCase()}`}
-            size="small"
-            sx={{
-              backgroundColor: 'rgba(56, 189, 248, 0.15)',
-              color: '#38bdf8',
-              fontFamily: mono,
-              fontSize: 10,
-              fontWeight: 700,
-              border: '1px solid rgba(56, 189, 248, 0.3)',
-            }}
-          />
-        </Box>
-      </Box>
 
       {/* Footer Main Grid */}
       <Box
