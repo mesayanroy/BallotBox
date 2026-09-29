@@ -349,7 +349,7 @@ export const Hero: React.FC<HeroProps> = ({ primaryLabel, onPrimary }) => {
           </Box>
         </Box>
 
-        {/* Right Side: Magic UI FileTree Beside the Hero Title */}
+        {/* Right Side: Magic UI FileTree Beside the Hero Title (Sleek Compact Size) */}
         <Box
           sx={{
             display: 'flex',
@@ -360,25 +360,26 @@ export const Hero: React.FC<HeroProps> = ({ primaryLabel, onPrimary }) => {
           <Box
             sx={{
               width: '100%',
-              maxWidth: 440,
-              backgroundColor: 'rgba(9, 13, 26, 0.75)',
+              maxWidth: 370,
+              backgroundColor: 'rgba(9, 13, 26, 0.8)',
               backdropFilter: 'blur(20px)',
-              borderRadius: 4,
-              border: '1px solid rgba(95, 227, 200, 0.25)',
-              boxShadow: '0 25px 60px rgba(0, 0, 0, 0.6), 0 0 35px rgba(95, 227, 200, 0.12)',
+              borderRadius: 3.5,
+              border: '1px solid rgba(95, 227, 200, 0.3)',
+              boxShadow: '0 20px 50px rgba(0, 0, 0, 0.6), 0 0 25px rgba(95, 227, 200, 0.12)',
               overflow: 'hidden',
-              transition: 'all 0.3s ease',
+              transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
               '&:hover': {
-                borderColor: 'rgba(95, 227, 200, 0.45)',
-                boxShadow: '0 30px 70px rgba(0, 0, 0, 0.7), 0 0 45px rgba(95, 227, 200, 0.2)',
+                borderColor: 'rgba(95, 227, 200, 0.5)',
+                transform: 'translateY(-3px)',
+                boxShadow: '0 25px 60px rgba(0, 0, 0, 0.7), 0 0 35px rgba(95, 227, 200, 0.2)',
               },
             }}
           >
             {/* Header bar of the FileTree card */}
             <Box
               sx={{
-                px: 2.5,
-                py: 1.5,
+                px: 2,
+                py: 1.25,
                 backgroundColor: 'rgba(255, 255, 255, 0.04)',
                 borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
                 display: 'flex',
@@ -386,9 +387,9 @@ export const Hero: React.FC<HeroProps> = ({ primaryLabel, onPrimary }) => {
                 justifyContent: 'space-between',
               }}
             >
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                <FolderIcon sx={{ color: '#38bdf8', fontSize: 18 }} />
-                <Typography sx={{ fontFamily: mono, fontSize: 12, fontWeight: 700, color: '#f8fafc' }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75 }}>
+                <FolderIcon sx={{ color: '#38bdf8', fontSize: 16 }} />
+                <Typography sx={{ fontFamily: mono, fontSize: 11.5, fontWeight: 700, color: '#f8fafc' }}>
                   BallotBox Architecture
                 </Typography>
               </Box>
@@ -399,15 +400,15 @@ export const Hero: React.FC<HeroProps> = ({ primaryLabel, onPrimary }) => {
                   backgroundColor: 'rgba(95, 227, 200, 0.15)',
                   color: '#5fe3c8',
                   fontFamily: mono,
-                  fontSize: 10,
+                  fontSize: 9.5,
                   fontWeight: 700,
-                  height: 22,
+                  height: 20,
                 }}
               />
             </Box>
 
             {/* Magic UI FileTree (Tree) Component */}
-            <Box sx={{ p: 2, minHeight: 310, maxHeight: 340, overflowY: 'auto' }}>
+            <Box sx={{ p: 1.5, minHeight: 230, maxHeight: 260, overflowY: 'auto' }}>
               <Tree
                 className="bg-transparent"
                 initialSelectedId="button"
@@ -419,19 +420,19 @@ export const Hero: React.FC<HeroProps> = ({ primaryLabel, onPrimary }) => {
             {/* Footer of the FileTree card */}
             <Box
               sx={{
-                px: 2.5,
-                py: 1.25,
-                backgroundColor: 'rgba(0, 0, 0, 0.3)',
+                px: 2,
+                py: 1,
+                backgroundColor: 'rgba(0, 0, 0, 0.35)',
                 borderTop: '1px solid rgba(255, 255, 255, 0.06)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
               }}
             >
-              <Typography sx={{ fontFamily: mono, fontSize: 10.5, color: '#94a3b8' }}>
-                ✦ Interactive ZK Contract Explorer
+              <Typography sx={{ fontFamily: mono, fontSize: 10, color: '#94a3b8' }}>
+                ✦ ZK Contract Explorer
               </Typography>
-              <Typography sx={{ fontFamily: mono, fontSize: 10.5, color: '#5fe3c8' }}>
+              <Typography sx={{ fontFamily: mono, fontSize: 10, color: '#5fe3c8' }}>
                 Midnight v4.1
               </Typography>
             </Box>

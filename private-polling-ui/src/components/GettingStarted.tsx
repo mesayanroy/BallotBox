@@ -72,24 +72,30 @@ export const GettingStarted: React.FC = () => {
   return (
     <Box
       sx={{
-        width: { xs: '100%', sm: 460 },
-        border: `1px solid ${tokens.rule}`,
-        borderRadius: 2,
+        width: { xs: '100%', sm: 480 },
+        border: `1px solid ${tokens.ruleStrong}`,
+        borderRadius: 3,
         backgroundColor: tokens.surface,
-        px: 3,
-        py: 2,
+        px: 3.5,
+        py: 2.5,
+        boxShadow: '0 8px 24px rgba(16, 19, 43, 0.05)',
+        transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+        '&:hover': {
+          borderColor: '#5fe3c8',
+          boxShadow: '0 16px 40px rgba(16, 19, 43, 0.1)',
+        },
       }}
     >
       <Button
         onClick={toggle}
         fullWidth
-        endIcon={<ExpandMoreIcon sx={{ transform: open ? 'rotate(180deg)' : 'none', transition: '0.2s' }} />}
-        sx={{ justifyContent: 'space-between', textTransform: 'none', color: tokens.ink, fontWeight: 700, px: 0 }}
+        endIcon={<ExpandMoreIcon sx={{ transform: open ? 'rotate(180deg)' : 'none', transition: '0.25s ease', color: '#5fe3c8' }} />}
+        sx={{ justifyContent: 'space-between', textTransform: 'none', color: tokens.ink, fontWeight: 700, px: 0, fontSize: 15 }}
       >
         New here? Get set up in about 5 minutes
       </Button>
       <Collapse in={open}>
-        <Box sx={{ pt: 2 }}>
+        <Box sx={{ pt: 2.5 }}>
           <Step n={1} title="Install a Midnight wallet" done={walletDetected}>
             {walletDetected ? (
               'Wallet detected in this browser.'
@@ -117,7 +123,7 @@ export const GettingStarted: React.FC = () => {
           <Step n={3} title="Choose a proof server">
             Your wallet builds zero-knowledge proofs through a proof server. Use the hosted option in wallet settings if
             offered, or run one locally with Docker:{' '}
-            <Box component="code" sx={{ fontSize: 11, color: tokens.ink }}>
+            <Box component="code" sx={{ fontSize: 11, color: tokens.ink, backgroundColor: tokens.sunken, px: 1, py: 0.2, borderRadius: 1 }}>
               docker run -p 6300:6300 midnightntwrk/proof-server:8.0.3 midnight-proof-server -v
             </Box>
           </Step>

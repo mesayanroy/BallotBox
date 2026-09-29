@@ -53,7 +53,8 @@ const App: React.FC = () => {
       <Section
         id="app"
         testId="app"
-        eyebrow="The app"
+        tone="surface"
+        eyebrow="✦ Live DApp Console"
         title={boardDeployments.length > 0 ? 'Your polls' : 'Vote, or run your own poll'}
         intro="Connect a Midnight wallet on Preprod to join a poll, cast a ballot or start a new one. New to Midnight? The checklist gets you set up in about five minutes."
       >
