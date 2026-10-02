@@ -34,8 +34,7 @@ export const LINKS = {
   xHandle: '@Maao',
   feedbackForm: optional(import.meta.env.VITE_FEEDBACK_URL),
   userGuide:
-    optional(import.meta.env.VITE_USER_GUIDE_URL) ??
-    'https://github.com/mesayanroy/Maao/blob/main/docs/USER_GUIDE.md',
+    optional(import.meta.env.VITE_USER_GUIDE_URL) ?? 'https://github.com/mesayanroy/Maao/blob/main/docs/USER_GUIDE.md',
   /** e.g. https://explorer.example/tx/{tx} — `{tx}` is replaced with the transaction hash. */
   explorerTx: optional(import.meta.env.VITE_EXPLORER_TX_URL),
   faucet: 'https://faucet.preprod.midnight.network/',

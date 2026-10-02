@@ -34,7 +34,7 @@ so nobody has to trust the organizer.
 | 📖 **Docs** | [User guide](./docs/USER_GUIDE.md) · [Architecture](./docs/ARCHITECTURE.md) · [Privacy model](./PRIVACY.md) · [Deployment](./docs/DEPLOYMENT.md) · [Integration](./api/INTEGRATION.md) |
 
 <p align="center">
-  <a href="https://ballotbox-beige.vercel.app"><img src="./docs/screenshots/landing-desktop.png" alt="Maao landing page: the featured Preprod poll with its live turnout, and the five-minute setup checklist" width="820"></a>
+  <a href="https://ballotbox-beige.vercel.app"><img src="./docs/screenshots/app-desktop.png" alt="Maao live app: the featured Preprod poll card with its enrol, vote, decrypt and result stepper, the Join this poll button, trustee and tester check-in options, and the five-minute setup checklist" width="820"></a>
 </p>
 
 ## Try it in five minutes
