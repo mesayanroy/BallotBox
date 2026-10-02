@@ -193,8 +193,8 @@ On Windows you only need WSL with an Ubuntu distro, plus `unzip` inside it (`wsl
 ### 1 · Install, compile, test
 
 ```bash
-git clone https://github.com/SATISH-JALAN/BallotBox.git
-cd BallotBox
+git clone https://github.com/mesayanroy/Maao.git
+cd Maao
 npm ci --legacy-peer-deps   # one install for all workspaces
 npm run compact             # compile the contract → contract/src/managed (≈1 min)
 npm run build               # contract → api → cli → ui
