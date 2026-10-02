@@ -1,6 +1,6 @@
 # Architecture
 
-How BallotBox is built, how data moves through it, and why the main design decisions were
+How Maao is built, how data moves through it, and why the main design decisions were
 made. For the security argument itself, see [PRIVACY.md](../PRIVACY.md).
 
 - [System overview](#system-overview)
@@ -29,7 +29,7 @@ flowchart TB
     Wallet[Lace / 1AM wallet<br/>balances, signs, submits]
     Prover[Proof server<br/>:6300 or hosted]
     Indexer[Midnight indexer<br/>GraphQL + WS]
-    Chain[(Midnight Preprod<br/>BallotBox contract)]
+    Chain[(Midnight Preprod<br/>Maao contract)]
 
     API -- circuit inputs + keys --> Prover
     API -- unbound tx --> Wallet
@@ -133,9 +133,9 @@ anyone can verify with `npm run verify`.
 
 | Where | Store | What is persisted |
 |---|---|---|
-| Browser | `localStorage`, key `ballotbox:v1:<network>:private-state:<contract>` | the 32-byte secret key only. A staged ballot is **memory-only** |
+| Browser | `localStorage`, key `maao:v1:<network>:private-state:<contract>` | the 32-byte secret key only. A staged ballot is **memory-only** |
 | CLI | LevelDB (`midnight-level-db`), encrypted with `PRIVATE_STATE_PASSWORD` | full private state |
-| Backup | `ballotbox-key-backup/v1` JSON | `{ networkId, contractAddress, secretKey }`. Written by the UI and by `deploy-direct` |
+| Backup | `maao-key-backup/v1` JSON | `{ networkId, contractAddress, secretKey }`. Written by the UI and by `deploy-direct` |
 
 One key per contract per browser. The same key acts as voter credential, organizer
 authority and trustee share, which is why the UI puts backup and restore on every poll card.

@@ -74,7 +74,7 @@ export const Features: React.FC = () => (
     testId="features"
     eyebrow="Features"
     title="Everything a private vote needs, and nothing to trust"
-    intro="BallotBox runs on Midnight, where contracts can compute over private data. Privacy and verifiability come from the protocol, not from a promise."
+    intro="Maao runs on Midnight, where contracts can compute over private data. Privacy and verifiability come from the protocol, not from a promise."
   >
     {/* Featured Security Banner displaying uploaded atomic ZK image */}
     <Box

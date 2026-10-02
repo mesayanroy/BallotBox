@@ -1,6 +1,6 @@
 # Deployments
 
-Public, commit-safe records of BallotBox contract deployments. Nothing here is secret.
+Public, commit-safe records of Maao contract deployments. Nothing here is secret.
 
 | File | Written by | Contents |
 |---|---|---|

@@ -1,18 +1,18 @@
 # Security policy
 
-BallotBox is a privacy product, so a flaw that links a voter to a ballot is a serious bug
+Maao is a privacy product, so a flaw that links a voter to a ballot is a serious bug
 even on a test network.
 
 ## Supported versions
 
 Only the latest release on `main`, and the contract deployed from it
-([`deployments/`](./deployments/)), receives fixes. BallotBox runs on Midnight **Preprod**
+([`deployments/`](./deployments/)), receives fixes. Maao runs on Midnight **Preprod**
 and is not audited. Don't use it for high-stakes votes.
 
 ## Reporting a vulnerability
 
 Please **don't open a public issue.** Report privately with
-[GitHub private vulnerability reporting](https://github.com/SATISH-JALAN/BallotBox/security/advisories/new).
+[GitHub private vulnerability reporting](https://github.com/mesayanroy/Maao/security/advisories/new).
 
 Especially relevant:
 
@@ -29,6 +29,6 @@ check there first.
 
 ## Handling secrets
 
-- Never commit a wallet seed, `.env`, or a `ballotbox-key-*.json` / `.secrets/` file.
+- Never commit a wallet seed, `.env`, or a `maao-key-*.json` / `.secrets/` file.
 - A seed was hardcoded in an earlier revision of `private-polling-cli/src/deploy-direct.ts`.
   That wallet is considered compromised and must not be used.

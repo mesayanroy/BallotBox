@@ -13,7 +13,9 @@ import type { ContractAddress } from '@midnight-ntwrk/midnight-js-protocol/compa
 import { bytesToHex, isHex32, hexToBytes } from './hex';
 import { readStoredSecretKey, writeStoredSecretKey } from './local-storage-private-state-provider';
 
-export const KEY_BACKUP_FORMAT = 'ballotbox-key-backup/v1';
+export const KEY_BACKUP_FORMAT = 'maao-key-backup/v1';
+/** Backups written before the rename to Maao are still accepted. */
+const LEGACY_KEY_BACKUP_FORMAT = 'ballotbox-key-backup/v1';
 
 export type KeyBackup = {
   readonly format: typeof KEY_BACKUP_FORMAT;
@@ -45,7 +47,9 @@ export const parseKeyBackup = (text: string, expectedNetworkId: string): KeyBack
   } catch {
     throw new Error('That file is not a valid key backup (it is not JSON).');
   }
-  if (parsed.format !== KEY_BACKUP_FORMAT) throw new Error('That file is not a BallotBox key backup.');
+  if ((parsed.format as string | undefined) === LEGACY_KEY_BACKUP_FORMAT)
+    parsed = { ...parsed, format: KEY_BACKUP_FORMAT };
+  if (parsed.format !== KEY_BACKUP_FORMAT) throw new Error('That file is not a Maao key backup.');
   if (typeof parsed.secretKey !== 'string' || !isHex32(parsed.secretKey)) {
     throw new Error('The backup is missing a valid 32-byte secret key.');
   }
@@ -70,7 +74,7 @@ export const downloadKeyBackup = (backup: KeyBackup): void => {
   const url = URL.createObjectURL(blob);
   const link = document.createElement('a');
   link.href = url;
-  link.download = `ballotbox-key-${backup.contractAddress.slice(0, 12)}.json`;
+  link.download = `maao-key-${backup.contractAddress.slice(0, 12)}.json`;
   document.body.appendChild(link);
   link.click();
   link.remove();

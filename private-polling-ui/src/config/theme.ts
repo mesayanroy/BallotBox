@@ -1,7 +1,7 @@
 import { createTheme } from '@mui/material';
 
 /**
- * BallotBox design tokens.
+ * Maao design tokens.
  *
  * Midnight night-sky palette: cool off-white ground, deep navy ink and hairline rules, with
  * the one dark, lit surface reserved for the hero. Colour is
@@ -13,6 +13,8 @@ export const tokens = {
   paper: '#f4f5fa',
   /** Cards and dialogs sitting on the page. */
   surface: '#fcfcff',
+  /** Neutral grey band behind the live app console. */
+  grey: '#e9eaee',
   /** Insets: code blocks, quiet panels, meter troughs. */
   sunken: '#e8eaf5',
   /** Primary type, and the fill of primary buttons. */

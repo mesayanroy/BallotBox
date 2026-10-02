@@ -159,7 +159,7 @@ export const WorkflowSection: React.FC = () => {
               color: '#ffffff',
             }}
           >
-            How BallotBox guarantees{' '}
+            How Maao guarantees{' '}
             <Highlighter action="highlight" color="#5fe3c8">
               complete privacy
             </Highlighter>

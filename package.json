@@ -1,5 +1,5 @@
 {
-  "name": "ballotbox",
+  "name": "maao",
   "version": "0.1.0",
   "author": "Satish Jalan",
   "license": "Apache-2.0",
@@ -79,10 +79,10 @@
     "vite-plugin-top-level-await": "^1.6.0",
     "vite-plugin-wasm": "^3.6.0"
   },
-  "description": "BallotBox — anonymous, verifiable polls on the Midnight network",
+  "description": "Maao — anonymous, verifiable polls on the Midnight network",
   "repository": {
     "type": "git",
-    "url": "https://github.com/SATISH-JALAN/BallotBox.git"
+    "url": "https://github.com/mesayanroy/Maao.git"
   },
-  "homepage": "https://github.com/SATISH-JALAN/BallotBox#readme"
+  "homepage": "https://github.com/mesayanroy/Maao#readme"
 }

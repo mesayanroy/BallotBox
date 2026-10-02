@@ -15,8 +15,8 @@ export interface SectionProps {
   readonly eyebrow?: string;
   readonly title?: string;
   readonly intro?: string;
-  /** `surface` lifts a band off the page ground to separate it from its neighbours. */
-  readonly tone?: 'paper' | 'surface';
+  /** `surface` lifts a band off the page ground; `grey` sets it in a neutral grey band. */
+  readonly tone?: 'paper' | 'surface' | 'grey';
   readonly testId?: string;
 }
 
@@ -35,9 +35,9 @@ export const Section: React.FC<React.PropsWithChildren<SectionProps>> = ({
     id={id}
     data-testid={testId}
     sx={{
-      backgroundColor: tone === 'surface' ? tokens.surface : tokens.paper,
-      borderTop: tone === 'surface' ? `1px solid ${tokens.rule}` : 'none',
-      borderBottom: tone === 'surface' ? `1px solid ${tokens.rule}` : 'none',
+      backgroundColor: tone === 'surface' ? tokens.surface : tone === 'grey' ? tokens.grey : tokens.paper,
+      borderTop: tone === 'paper' ? 'none' : `1px solid ${tokens.rule}`,
+      borderBottom: tone === 'paper' ? 'none' : `1px solid ${tokens.rule}`,
       py: { xs: 7, md: 11 },
       // Anchor jumps land below the sticky header.
       scrollMarginTop: 96,

@@ -1,6 +1,6 @@
-# BallotBox CLI
+# Maao CLI
 
-Node tooling for BallotBox on Midnight: an interactive client, a scripted deployer, and two
+Node tooling for Maao on Midnight: an interactive client, a scripted deployer, and two
 verification tools that need no wallet.
 
 Run the commands below from the **repository root**, after `npm ci`, `npm run compact` and

@@ -67,6 +67,7 @@ managed/
 # Secrets — organizer/voter key backups and wallet seeds
 .secrets/
 *.key.json
+maao-key-*.json
 ballotbox-key-*.json
 .env.local
 

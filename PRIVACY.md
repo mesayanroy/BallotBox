@@ -1,6 +1,6 @@
 # Privacy model & threat model
 
-This document states exactly what BallotBox protects, what it does not, and why. It is
+This document states exactly what Maao protects, what it does not, and why. It is
 deliberately blunt. A voting system that overstates its guarantees is worse than one that
 makes none, because people act on the claim.
 
@@ -106,7 +106,7 @@ usage can be verified on-chain.
   reads or writes** and that `createPoll` never resets.
 - It shares no derivation with the voter commitment or the nullifier, so it doesn't link a
   wallet to a ballot. Pinned by `CLOSED: checking in is unconnected to any ballot`.
-- It does publish that the wallet used BallotBox. That's why it's opt-in and explained in
+- It does publish that the wallet used Maao. That's why it's opt-in and explained in
   the UI before the user is asked.
 - `ownPublicKey()` is supplied by the caller's client. The list proves that a wallet chose
   to be counted, not that it holds funds.
@@ -128,9 +128,9 @@ usage can be verified on-chain.
 ## 7. Key handling
 
 - **Browser:** one 32-byte secret per contract, in `localStorage` under
-  `ballotbox:v1:<network>:private-state:<contract>`. It survives reloads. Anything running on
+  `maao:v1:<network>:private-state:<contract>`. It survives reloads. Anything running on
   the page's origin can read it, which is the usual trade-off of a serverless dApp.
-- **Backup:** `ballotbox-key-backup/v1` JSON, exported and imported from the 🔑 button.
+- **Backup:** `maao-key-backup/v1` JSON, exported and imported from the 🔑 button.
   Anyone holding it can act as you on that poll.
 - **CLI:** LevelDB private state encrypted with `PRIVATE_STATE_PASSWORD`. The deploy
   script writes the admin key to `private-polling-cli/.secrets/` (gitignored).

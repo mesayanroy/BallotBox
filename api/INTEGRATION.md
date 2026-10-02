@@ -1,4 +1,4 @@
-# Integrating BallotBox
+# Integrating Maao
 
 `api/` is the integration surface. The web app and the CLI do everything through
 `PrivatePollingAPI`, so a DAO tool, bot or custom frontend can do the same without

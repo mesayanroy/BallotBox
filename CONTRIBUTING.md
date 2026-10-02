@@ -1,10 +1,10 @@
-# Contributing to BallotBox
+# Contributing to Maao
 
 Thanks for helping! Bug reports, feedback, docs fixes and code are all welcome.
 
 ## Ways to help
 
-- **Test on Preprod** and send [feedback](https://forms.gle/fhvKZZWAUh2z6kGj8). This is the most useful thing right now.
+- **Test on Preprod** and send [feedback](https://forms.gle/d7TDeV5dcVFrKr8y9). This is the most useful thing right now.
 - **Report bugs** with the bug-report template. For vulnerabilities, see [SECURITY.md](./SECURITY.md).
 - **Improve docs.** If something in the [user guide](./docs/USER_GUIDE.md) confused you, it's a bug.
 - **Send code.** Please open an issue first for anything beyond a small fix.

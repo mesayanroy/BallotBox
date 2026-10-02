@@ -1,23 +1,23 @@
 import React from 'react';
 import { Box } from '@mui/material';
-import HowToVoteIcon from '@mui/icons-material/HowToVote';
-import { tokens } from '../../config/theme';
 
-/** Small ink badge used next to the wordmark in the header and footer. */
-export const BrandMark: React.FC<{ readonly inverted?: boolean }> = ({ inverted = false }) => (
+/** The Maao "M" mark, used next to the wordmark in the header and footer. */
+export const BrandMark: React.FC<{ readonly inverted?: boolean; readonly size?: number }> = ({
+  inverted = false,
+  size = 30,
+}) => (
   <Box
+    component="img"
+    src="/maao-logo.svg"
+    alt=""
     aria-hidden
     sx={{
-      width: 28,
-      height: 28,
-      borderRadius: 1.5,
-      display: 'grid',
-      placeItems: 'center',
-      backgroundColor: inverted ? tokens.surface : tokens.ink,
-      color: inverted ? tokens.ink : tokens.surface,
-      transition: 'background-color 0.35s, color 0.35s',
+      width: size,
+      height: size,
+      display: 'block',
+      borderRadius: '22%',
+      boxShadow: inverted ? '0 0 0 1px rgba(238, 240, 255, 0.18)' : '0 2px 8px rgba(16, 19, 43, 0.18)',
+      transition: 'box-shadow 0.35s',
     }}
-  >
-    <HowToVoteIcon sx={{ fontSize: 17 }} />
-  </Box>
+  />
 );

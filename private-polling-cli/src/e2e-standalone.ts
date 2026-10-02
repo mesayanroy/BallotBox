@@ -1,4 +1,4 @@
-// BallotBox — end-to-end run against a local Midnight network
+// Maao — end-to-end run against a local Midnight network
 //
 // Starts a throwaway node + indexer + proof server in Docker (compose.yml), then drives a
 // complete poll through real transactions: proofs from the proof server, balancing and
@@ -123,7 +123,7 @@ const runPoll = async (env: EnvironmentConfiguration, wallet: MidnightWalletProv
   expect(s.isAdmin && s.pollState === PollState.CLOSED, 'deployer is admin of a CLOSED contract');
 
   const created = await timed('Organizer creates an open-enrollment poll', () =>
-    organizer.createPoll('Should BallotBox ship v1?', {
+    organizer.createPoll('Should Maao ship v1?', {
       deadline: new Date(Date.now() + 2 * 3_600_000),
       quorum: 2,
       openEnrollment: true,

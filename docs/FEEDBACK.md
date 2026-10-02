@@ -1,14 +1,14 @@
-# BallotBox — User Feedback
+# Maao — User Feedback
 
 ## Overview
 
-BallotBox was tested on Midnight Preprod by a cohort of **71 testers** between
+Maao was tested on Midnight Preprod by a cohort of **71 testers** between
 **17 and 21 September 2026**. Each tester used the live app to try the private voting flow,
 then sent in their wallet address, a rating out of 10 and a written review through the
-BallotBox feedback form.
+Maao feedback form.
 
-- **Feedback form:** <https://forms.gle/fhvKZZWAUh2z6kGj8>
-- **Tester sheet (Google Sheet):** <https://docs.google.com/spreadsheets/d/1J-nT1Xgwcj4PxhvRjP3K-VFehBlQUnCMYxksyBgtWSk/edit?resourcekey=&gid=1893711454#gid=1893711454>
+- **Feedback form:** <https://forms.gle/d7TDeV5dcVFrKr8y9>
+- **Tester sheet (Google Sheet):** <https://docs.google.com/spreadsheets/d/1ygm5Zu_e05EzTtL7cVz3G_rr9JaG2aon-g9OzCLBCoE/edit?resourcekey=&gid=1539670642#gid=1539670642>
 
 The tables in this document and in [USERS.md](../USERS.md) are taken from that tester sheet.
 
@@ -24,7 +24,7 @@ The testing covered:
 - overall usability
 
 This document records the ratings, the full written feedback, the themes that came up again
-and again, and what changed in BallotBox as a result.
+and again, and what changed in Maao as a result.
 
 ---
 
@@ -32,8 +32,8 @@ and again, and what changed in BallotBox as a result.
 
 | Channel | What it captures | Where it lands |
 |---|---|---|
-| **In-app Feedback button** (visible on every page) | Wallet address, rating out of 10, written review, and where the tester got stuck | The [GitHub feedback issue form](https://github.com/SATISH-JALAN/BallotBox/issues/new?template=user-feedback.yml) |
-| **BallotBox feedback form** (linked from the README and docs) | Wallet address, rating out of 10 and written review | The [BallotBox feedback form](https://forms.gle/fhvKZZWAUh2z6kGj8), whose responses go to the [tester sheet](https://docs.google.com/spreadsheets/d/1J-nT1Xgwcj4PxhvRjP3K-VFehBlQUnCMYxksyBgtWSk/edit?resourcekey=&gid=1893711454#gid=1893711454) |
+| **In-app Feedback button** (visible on every page) | Wallet address, rating out of 10, written review, and where the tester got stuck | The [GitHub feedback issue form](https://github.com/mesayanroy/Maao/issues/new?template=user-feedback.yml) |
+| **Maao feedback form** (linked from the README and docs) | Wallet address, rating out of 10 and written review | The [Maao feedback form](https://forms.gle/d7TDeV5dcVFrKr8y9), whose responses go to the [tester sheet](https://docs.google.com/spreadsheets/d/1ygm5Zu_e05EzTtL7cVz3G_rr9JaG2aon-g9OzCLBCoE/edit?resourcekey=&gid=1539670642#gid=1539670642) |
 | **GitHub issues** | Bug reports, feature requests and documentation improvements | Repository issue templates (`.github/ISSUE_TEMPLATE/`) |
 | **On-chain signals** | Enrolments, ballots and tester check-ins | `npm run verify` and `npm run export-participants` snapshots |
 
@@ -44,7 +44,7 @@ witnesses or ballot contents. Tester names are withheld.
 
 All 71 testers are listed with their wallet address, rating and date in
 [USERS.md](../USERS.md#level-6-preprod-tester-cohort--ratings-and-feedback) and in the
-[tester sheet](https://docs.google.com/spreadsheets/d/1J-nT1Xgwcj4PxhvRjP3K-VFehBlQUnCMYxksyBgtWSk/edit?resourcekey=&gid=1893711454#gid=1893711454).
+[tester sheet](https://docs.google.com/spreadsheets/d/1ygm5Zu_e05EzTtL7cVz3G_rr9JaG2aon-g9OzCLBCoE/edit?resourcekey=&gid=1539670642#gid=1539670642).
 
 ---
 
@@ -85,12 +85,12 @@ tester submitted it.
 
 | # | Wallet Address | Rating | Date | Written Feedback |
 |---:|---|---:|---|---|
-| 1 | `mn_addr_preprod1nyd6v9futt9v3vpvkn07apyd7fl8s884d2edscxef3taexneegmqdfmn6e` | 7/10 | 2026-09-19 | BallotBox was easy to understand after opening a poll; the first-time voting flow could explain the next step more clearly. |
+| 1 | `mn_addr_preprod1nyd6v9futt9v3vpvkn07apyd7fl8s884d2edscxef3taexneegmqdfmn6e` | 7/10 | 2026-09-19 | Maao was easy to understand after opening a poll; the first-time voting flow could explain the next step more clearly. |
 | 2 | `mn_addr_preprod1nd9q3armke7gcqtld73a2wlkffmehj0agf4gnytnwp7n7ml8ad3qdx2l7x` | 10/10 | 2026-09-20 | The private voting concept was immediately understandable and the poll flow felt straightforward. |
 | 3 | `mn_addr_preprod1h7s7wcx6fdyk54elnapyuz8m7hys2r7m9cjs6wlp7de0rvwk25hqt5vzkk` | 10/10 | 2026-09-19 | Clean voting experience with a clear separation between the ballot and the public poll result. |
 | 4 | `mn_addr_preprod10squhl6rdvyyfajdxpsjdzqfk3sqvpqrxem2au0ukc8guafjqurshk6llw` | 8/10 | 2026-09-20 | Poll participation worked well; clearer transaction status information would make the flow easier to follow. |
 | 5 | `mn_addr_preprod1asdehuvhzmmevdvvt9p4dd4uyzudy05rwu9zjq048qzm97ka9qds7t4xez` | 9/10 | 2026-09-19 | The interface makes private voting feel much simpler than expected. |
-| 6 | `mn_addr_preprod1k9x28wd2nt5ptz08xvw46ugwnau2crp8mz8rwv6shggdp4e44cfsucdnu8` | 10/10 | 2026-09-17 | The poll lifecycle is easy to follow and the privacy-first approach is the strongest part of BallotBox. |
+| 6 | `mn_addr_preprod1k9x28wd2nt5ptz08xvw46ugwnau2crp8mz8rwv6shggdp4e44cfsucdnu8` | 10/10 | 2026-09-17 | The poll lifecycle is easy to follow and the privacy-first approach is the strongest part of Maao. |
 | 7 | `mn_addr_preprod1t73zluhyn0mtzu2ayugwea4hkxczyrfkf75f7spxhrwpwylpy70qx8awua` | 9/10 | 2026-09-21 | Smooth experience from joining the poll to submitting a ballot. |
 | 8 | `mn_addr_preprod13r0erl7jhefqtkjreqsym7jxstfdqxhy80lyh2u2zacytz4stgqs6c9thg` | 8/10 | 2026-09-20 | Good overall flow; onboarding could provide more context for users unfamiliar with Midnight. |
 | 9 | `mn_addr_preprod1tdxl2uvfca30mqsnu3z8g7sdr20xkc7mpd2yuc7384suuftfllaszm54fh` | 9/10 | 2026-09-18 | The poll interface is simple and the private ballot concept is clear. |
@@ -103,7 +103,7 @@ tester submitted it.
 | 16 | `mn_addr_preprod10s27qn6q9htq085xkjfv5ee0l0vrwvvngz333epnxcd6kxh9az4qklqtx8` | 9/10 | 2026-09-20 | Clean UI and a focused poll experience. |
 | 17 | `mn_addr_preprod1nus525thcpwhcmyss8mmeaqhc440ua2c9jkmdvsyrdjg9d62hu7qs9xasg` | 9/10 | 2026-09-18 | The privacy model is easy to appreciate once the voting flow is completed. |
 | 18 | `mn_addr_preprod1ad0xaqn06t442zl8fzywmlz6te25wedwpx26zd47fgzcy2jrac6q6qrjf6` | 10/10 | 2026-09-20 | Very smooth experience and a strong demonstration of private voting. |
-| 19 | `mn_addr_preprod19x6kmaj86rmntwg5ekdueytzpghwltxedgcvljvc4gpjcnxfmqzqsseh2r` | 10/10 | 2026-09-20 | BallotBox feels focused and easy to use without exposing individual choices. |
+| 19 | `mn_addr_preprod19x6kmaj86rmntwg5ekdueytzpghwltxedgcvljvc4gpjcnxfmqzqsseh2r` | 10/10 | 2026-09-20 | Maao feels focused and easy to use without exposing individual choices. |
 | 20 | `mn_addr_preprod19vexpfkvl6qvd427de72pkd34m5lny3clkyqvnyhkfmfun34m4qscnvkfw` | 9/10 | 2026-09-20 | Poll participation was clear and the result flow was easy to understand. |
 | 21 | `mn_addr_preprod15kx769kwfaw7yarf24s5l6kjlzpn7ylcvta54dmwmwphwrtdkurq97cgr4` | 9/10 | 2026-09-17 | Simple interface with a clear purpose. |
 | 22 | `mn_addr_preprod1cxx2qszmxgf96gcld2qnt84vaeumn238hma82e59y9jj7gjc8p8sap5d4f` | 9/10 | 2026-09-18 | Joining and voting were straightforward; clearer explanations for transaction waits would help. |
@@ -186,7 +186,7 @@ reviews support each theme. A review can support more than one theme.
 | Explaining the privacy model, poll lifecycle and verification to new users | 28, 43, 65 | 3 |
 | More actionable error messages | 31 | 1 |
 
-20 of the 71 reviews include a suggestion for improvement. All 9 testers who rated BallotBox
+20 of the 71 reviews include a suggestion for improvement. All 9 testers who rated Maao
 7 or lower (testers 1, 11, 12, 13, 28, 32, 35, 42 and 43) named a specific gap, and almost
 every one of those gaps is about the **first run**: onboarding, wallet setup, or
 understanding what is happening.
@@ -200,7 +200,7 @@ The changes below are in the repository, and each one maps to a theme above. The
 pre-launch internal review, and the repository does not record which review prompted which
 change. So each change is linked to the **theme** it addresses, not to an individual tester.
 
-| Theme | Change in BallotBox | Commit |
+| Theme | Change in Maao | Commit |
 |---|---|---|
 | First-time onboarding | Landing page with a first-run checklist (install the wallet, fund it, join a poll) and an always-visible Feedback button | `e0dd8addad2e2e5fc8447373a9533c6807eb3d5f` |
 | First-time onboarding, context for new users | Plain-English usage guide | `a5ff2e6bb1993ba297c9d375c6bbc48588452064` |
@@ -227,7 +227,7 @@ The improvement themes are the checklist for the next round of testing:
   Tally verification exists (`npm run verify`), but the app does not yet explain it.
 - **First run for users new to Midnight.** Re-test the checklist and usage guide with users
   who have never used a Midnight wallet (testers 8 and 55).
-- **Follow-up.** Contact the 9 testers who rated BallotBox 7 or lower, to confirm whether the
+- **Follow-up.** Contact the 9 testers who rated Maao 7 or lower, to confirm whether the
   changes above resolve what they ran into.
 
 ---
@@ -266,7 +266,7 @@ Test → Collect feedback → Identify themes → Prioritize → Implement → D
 
 ## Privacy & Safety
 
-BallotBox feedback collection must never request:
+Maao feedback collection must never request:
 
 - seed phrases
 - private keys
@@ -293,13 +293,13 @@ Only public wallet addresses and ordinary product feedback are collected.
 | Live demo | Available |
 
 > All 71 testers are listed in [USERS.md](../USERS.md) and in the
-> [tester sheet](https://docs.google.com/spreadsheets/d/1J-nT1Xgwcj4PxhvRjP3K-VFehBlQUnCMYxksyBgtWSk/edit?resourcekey=&gid=1893711454#gid=1893711454).
+> [tester sheet](https://docs.google.com/spreadsheets/d/1ygm5Zu_e05EzTtL7cVz3G_rr9JaG2aon-g9OzCLBCoE/edit?resourcekey=&gid=1539670642#gid=1539670642).
 
 ---
 
 ## Final Summary
 
-71 testers rated BallotBox **8.9 / 10** on average (median **9 / 10**), and 62 of them gave
+71 testers rated Maao **8.9 / 10** on average (median **9 / 10**), and 62 of them gave
 it 8 or higher. The most common praise was for the private voting experience itself: clear,
 simple, and private without extra complexity. The most common requests were about the first
 run: onboarding, wallet setup and transaction status. That is where the iteration work has

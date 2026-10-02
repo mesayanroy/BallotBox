@@ -35,7 +35,9 @@ import {
 import { privatePollingPrivateStateKey, type PrivateStateId } from '../../../api/src/index';
 import { bytesToHex, hexToBytes } from './hex';
 
-const STORAGE_PREFIX = 'ballotbox:v1';
+const STORAGE_PREFIX = 'maao:v1';
+/** Prefix used before the rename to Maao; read once and migrated so existing keys survive. */
+const LEGACY_STORAGE_PREFIX = 'ballotbox:v1';
 
 type StoredPrivateState = { readonly secretKey: string };
 
@@ -50,7 +52,15 @@ const signingKeyStorageKey = (networkId: string, address: ContractAddress): stri
 const safeStorage = {
   get(key: string): string | null {
     try {
-      return window.localStorage.getItem(key);
+      const value = window.localStorage.getItem(key);
+      if (value !== null || !key.startsWith(STORAGE_PREFIX)) return value;
+      const legacyKey = LEGACY_STORAGE_PREFIX + key.slice(STORAGE_PREFIX.length);
+      const legacy = window.localStorage.getItem(legacyKey);
+      if (legacy !== null) {
+        window.localStorage.setItem(key, legacy);
+        window.localStorage.removeItem(legacyKey);
+      }
+      return legacy;
     } catch {
       return null;
     }
@@ -181,7 +191,7 @@ export const localStoragePrivateStateProvider = (
           contractAddress: address,
           states: state ? { [privatePollingPrivateStateKey]: bytesToHex(state.secretKey) } : {},
         }),
-        salt: 'ballotbox-local-storage',
+        salt: 'maao-local-storage',
       });
     },
 
@@ -211,7 +221,7 @@ export const localStoragePrivateStateProvider = (
       return Promise.resolve({
         format: 'midnight-signing-key-export',
         encryptedPayload: JSON.stringify({ keys: {} }),
-        salt: 'ballotbox-local-storage',
+        salt: 'maao-local-storage',
       });
     },
 

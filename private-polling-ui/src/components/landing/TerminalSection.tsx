@@ -77,7 +77,7 @@ export const TerminalSection: React.FC = () => {
               mx: 'auto',
             }}
           >
-            Inspect how BallotBox creates zero-knowledge proofs locally in your browser and registers state updates on
+            Inspect how Maao creates zero-knowledge proofs locally in your browser and registers state updates on
             Midnight.
           </Typography>
         </Box>
@@ -90,7 +90,7 @@ export const TerminalSection: React.FC = () => {
             ✔ Connected to Midnight Preprod (Chain ID: 4173) | Node rpc.preprod.midnight.network
           </AnimatedSpan>
 
-          <TypingAnimation delay={1500}>$ ballotbox poll info --id 0x4e29b</TypingAnimation>
+          <TypingAnimation delay={1500}>$ maao poll info --id 0x4e29b</TypingAnimation>
 
           <AnimatedSpan delay={2200} className="text-purple-400">
             [Poll #0x4e29b] &quot;Protocol Governance 2026&quot; | Deadline: Block #1,048,500 | Quorum: 50 voters
@@ -106,7 +106,7 @@ export const TerminalSection: React.FC = () => {
             ✔ Proof generated in 842ms | Zero privacy leaks | Circuit verifier: PASS
           </AnimatedSpan>
 
-          <TypingAnimation delay={5400}>$ ballotbox vote submit --proof zk_proof.bin</TypingAnimation>
+          <TypingAnimation delay={5400}>$ maao vote submit --proof zk_proof.bin</TypingAnimation>
 
           <AnimatedSpan delay={6200} className="text-green-500">
             ✔ Transaction broadcasted to Midnight Ledger | Tx Hash: 0x8aef72...94b1 (Status: CONFIRMED)

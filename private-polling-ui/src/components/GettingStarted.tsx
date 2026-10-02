@@ -6,7 +6,7 @@ import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
 import { LINKS } from '../config/product';
 import { tokens } from '../config/theme';
 
-const DISMISS_KEY = 'ballotbox:v1:getting-started-collapsed';
+const DISMISS_KEY = 'maao:v1:getting-started-collapsed';
 
 const readCollapsed = (): boolean => {
   try {

@@ -11,7 +11,7 @@ const optional = (value: string | undefined): string | undefined => {
 };
 
 export const PRODUCT = {
-  name: 'BallotBox',
+  name: 'Maao',
   tagline: 'Private polls on Midnight',
   description:
     'Anonymous, verifiable polls. Your ballot is encrypted, your eligibility is proven in zero knowledge, and the result is checked on-chain.',
@@ -29,12 +29,13 @@ export const NETWORK_ID: string = import.meta.env.VITE_NETWORK_ID || 'preprod';
 export const FEATURED_CONTRACT_ADDRESS = optional(import.meta.env.VITE_CONTRACT_ADDRESS);
 
 export const LINKS = {
-  github: optional(import.meta.env.VITE_GITHUB_URL) ?? 'https://github.com/mesayanroy/BallotBox',
-  x: optional(import.meta.env.VITE_X_URL),
+  github: optional(import.meta.env.VITE_GITHUB_URL) ?? 'https://github.com/mesayanroy/Maao',
+  x: optional(import.meta.env.VITE_X_URL) ?? 'https://x.com/SayanRo27946715',
+  xHandle: '@Maao',
   feedbackForm: optional(import.meta.env.VITE_FEEDBACK_URL),
   userGuide:
     optional(import.meta.env.VITE_USER_GUIDE_URL) ??
-    'https://github.com/mesayanroy/BallotBox/blob/main/docs/USER_GUIDE.md',
+    'https://github.com/mesayanroy/Maao/blob/main/docs/USER_GUIDE.md',
   /** e.g. https://explorer.example/tx/{tx} — `{tx}` is replaced with the transaction hash. */
   explorerTx: optional(import.meta.env.VITE_EXPLORER_TX_URL),
   faucet: 'https://faucet.preprod.midnight.network/',

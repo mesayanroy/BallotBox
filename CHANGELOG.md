@@ -6,7 +6,19 @@ project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
-## [0.3.0] — 2026-09-14 — Level 4 MVP: “BallotBox”
+### Changed
+
+- Product renamed to **Maao** across the web app, CLI, docs and brand assets, with a new "M" logo
+  (`docs/brand/logo.svg`, favicon, header, footer and poll cards). Existing browser keys and key
+  backups from before the rename are still read and migrated automatically.
+- Header redesigned as a horizontally scrollable section strip with active-section highlighting
+  and a page-progress bar, on every screen size.
+- Live app section now sits on a grey band and gains a Toolkit of step-by-step cards: organizer
+  checklist, trustee flow, poll lifecycle, privacy split, key safety, verification and circuit costs.
+- Product X profile is now [@Maao](https://x.com/SayanRo27946715).
+- Tester sheet moved to a new Google Sheet, ordered oldest first; import file in `docs/tester-sheet.csv`.
+
+## [0.3.0] — 2026-09-14 — Level 4 MVP: “Maao”
 
 A contract redeploy is **required**: the ledger layout changed, and the previously
 published Preprod address no longer resolves on the network.
@@ -60,7 +72,7 @@ published Preprod address no longer resolves on the network.
   environment. Treat the previously committed seed as compromised.
 
 ### Changed
-- Product renamed to **BallotBox**. License metadata aligned to Apache-2.0.
+- Product renamed to **Maao**. License metadata aligned to Apache-2.0.
 
 ## [0.2.0] — 2026-08-30 — Level 3
 

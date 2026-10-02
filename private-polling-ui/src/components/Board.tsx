@@ -25,7 +25,7 @@ import {
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import ShareIcon from '@mui/icons-material/Share';
 import KeyIcon from '@mui/icons-material/VpnKey';
-import HowToVoteIcon from '@mui/icons-material/HowToVote';
+import { BrandMark } from './Layout/BrandMark';
 import { type Observable } from 'rxjs';
 import { PollState } from '../../../contract/src/managed/private-polling/contract/index.js';
 import { useDeployedBoardContext } from '../hooks';
@@ -145,7 +145,7 @@ export const Board: React.FC<Readonly<BoardProps>> = ({ boardDeployment$ }) => {
 
           <CardHeader
             sx={{ borderBottom: `1px solid ${tokens.rule}`, pb: 1.5 }}
-            avatar={<HowToVoteIcon sx={{ color: tokens.ink }} />}
+            avatar={<BrandMark size={28} />}
             title={
               <Typography
                 variant="caption"

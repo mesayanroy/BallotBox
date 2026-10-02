@@ -7,12 +7,12 @@ Preprod testers (Levels 5–6). Replace every `<…>` before posting.
 
 | Field | Suggested value |
 |---|---|
-| Name | **BallotBox** |
-| Handle | [`@BallotMidnightt`](https://x.com/BallotMidnightt) |
+| Name | **Maao** |
+| Handle | [`@Maao`](https://x.com/SayanRo27946715) |
 | Bio (≤160) | `Private, verifiable polls on @MidnightNtwrk. Your ballot is encrypted, your eligibility is proven in zero knowledge, the result is checked on-chain. Live on Preprod 👇` |
-| Website | `https://private-pooling.vercel.app` |
+| Website | `https://ballotbox-beige.vercel.app` |
 | Location | `Midnight Preprod` |
-| Avatar | `private-polling-ui/public/icon.png`, or a ballot-box glyph in ink `#1d1c18` on paper `#f2efe8` |
+| Avatar | `private-polling-ui/public/icon.png` (source: [`docs/brand/logo.svg`](./brand/logo.svg)): the Maao "M" mark in teal `#5fe3c8` → indigo `#8b93ff` on midnight `#070918` |
 | Header | [`docs/screenshots/landing-desktop.png`](./screenshots/landing-desktop.png), cropped to 1500×500 |
 | Pinned post | Launch thread (below) |
 
@@ -29,8 +29,8 @@ After you create it:
 >
 > We built a third option on @MidnightNtwrk.
 >
-> Meet BallotBox 🗳️ private, verifiable polls, live on Preprod.
-> https://private-pooling.vercel.app
+> Meet Maao 🗳️ private, verifiable polls, live on Preprod.
+> https://ballotbox-beige.vercel.app
 
 **2/**
 > 🔒 Your ballot is encrypted before it leaves your browser. Nobody reads it — not other
@@ -50,14 +50,14 @@ After you create it:
 > 3. Open the featured poll → Join → Vote
 > 4. Tap "Count me as a tester"
 >
-> Guide: https://github.com/SATISH-JALAN/BallotBox/blob/main/docs/USAGE.md
+> Guide: https://github.com/mesayanroy/Maao/blob/main/docs/USAGE.md
 
 **5/**
 > Building in public: code, contract, tests and CI are all open.
-> https://github.com/SATISH-JALAN/BallotBox
+> https://github.com/mesayanroy/Maao
 >
 > Tell us what broke. Every piece of feedback gets read, and we post what we change because of it. 👇
-> https://forms.gle/fhvKZZWAUh2z6kGj8
+> https://forms.gle/d7TDeV5dcVFrKr8y9
 
 ## 3. Building-in-public cadence
 
@@ -74,19 +74,19 @@ Tag `@MidnightNtwrk`; use `#Midnight #ZK #BuildInPublic`.
 ## 4. Tester recruitment messages
 
 **Discord / Telegram (Midnight community, ZK groups, university clubs)**
-> Hey! I'm testing BallotBox, anonymous voting on Midnight Preprod. It takes about 5 minutes,
+> Hey! I'm testing Maao, anonymous voting on Midnight Preprod. It takes about 5 minutes,
 > needs no real money, and your vote stays secret (it's encrypted and proven in ZK).
 > Would you try one vote and tell me where you got stuck?
-> 👉 https://private-pooling.vercel.app/?poll=7423df36535c53ec590fd268f36771b9b9bd63ab741706062ac820f7b59f9351 · guide: https://github.com/SATISH-JALAN/BallotBox/blob/main/docs/USAGE.md
+> 👉 https://ballotbox-beige.vercel.app/?poll=7423df36535c53ec590fd268f36771b9b9bd63ab741706062ac820f7b59f9351 · guide: https://github.com/mesayanroy/Maao/blob/main/docs/USAGE.md
 
 **Direct message**
 > Could you do me a 5-minute favour? I built a private voting dApp on Midnight's test
-> network and need real people to try it. Open https://private-pooling.vercel.app/?poll=7423df36535c53ec590fd268f36771b9b9bd63ab741706062ac820f7b59f9351, follow “New here?”, vote,
+> network and need real people to try it. Open https://ballotbox-beige.vercel.app/?poll=7423df36535c53ec590fd268f36771b9b9bd63ab741706062ac820f7b59f9351, follow “New here?”, vote,
 > tap “Count me as a tester”, then hit Feedback. Happy to help on a call if the wallet
 > setup is confusing.
 
 **Follow-up for people who started but didn't vote**
-> Thanks for trying BallotBox! Where did it stop for you: wallet, tokens/DUST, proof
+> Thanks for trying Maao! Where did it stop for you: wallet, tokens/DUST, proof
 > server, or something else? That's exactly what I'm fixing next.
 
 ## 5. Onboarding session script (for live sessions or calls)
@@ -145,10 +145,10 @@ Use these if a thread is too much — one per day works well.
 > Online votes make you choose: trust a server with your ballot, or publish it on a chain
 > forever.
 >
-> BallotBox does neither. Ballots are encrypted in your browser; eligibility is proven in
+> Maao does neither. Ballots are encrypted in your browser; eligibility is proven in
 > zero knowledge on @MidnightNtwrk.
 >
-> Live on Preprod 👇 https://private-pooling.vercel.app
+> Live on Preprod 👇 https://ballotbox-beige.vercel.app
 
 **Post 2 — the technical insight**
 > How do you count votes you can't read?
@@ -164,5 +164,5 @@ Use these if a thread is too much — one per day works well.
 > 5 minutes, free test tokens, no real money. Vote in a poll where nobody — including me —
 > can read your ballot, then check the result yourself with one command.
 >
-> https://private-pooling.vercel.app
-> Guide: https://github.com/SATISH-JALAN/BallotBox/blob/main/docs/USAGE.md
+> https://ballotbox-beige.vercel.app
+> Guide: https://github.com/mesayanroy/Maao/blob/main/docs/USAGE.md

@@ -86,7 +86,7 @@ const SUCCESS_LABELS: Record<ContractAction, string> = {
   submitShare: 'Decryption share submitted',
   castVote: 'Your encrypted ballot is recorded',
   publishTally: 'Result published and verified on-chain',
-  checkIn: 'Checked in — thanks for testing BallotBox!',
+  checkIn: 'Checked in — thanks for testing Maao!',
   deploy: 'Contract deployed',
 };
 

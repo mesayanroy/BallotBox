@@ -105,7 +105,7 @@ describe('key backup', () => {
 
   it('rejects files that are not a valid backup for this network', () => {
     expect(() => parseKeyBackup('not json', 'preprod')).toThrow(/not JSON/);
-    expect(() => parseKeyBackup('{}', 'preprod')).toThrow(/not a BallotBox key backup/);
+    expect(() => parseKeyBackup('{}', 'preprod')).toThrow(/not a Maao key backup/);
     const good = {
       format: KEY_BACKUP_FORMAT,
       networkId: 'preview',
@@ -120,12 +120,24 @@ describe('key backup', () => {
 
   it('accepts the file written by the CLI deploy script', () => {
     const cliFile = {
-      format: 'ballotbox-key-backup/v1',
+      format: 'maao-key-backup/v1',
       networkId: 'preprod',
       contractAddress: ADDRESS,
       secretKey: bytesToHex(SECRET),
       warning: 'Organizer/admin key.',
     };
     expect(hexToBytes(parseKeyBackup(JSON.stringify(cliFile), 'preprod').secretKey)).toEqual(SECRET);
+  });
+
+  it('accepts backups written before the rename to Maao', () => {
+    const legacyFile = {
+      format: 'ballotbox-key-backup/v1',
+      networkId: 'preprod',
+      contractAddress: ADDRESS,
+      secretKey: bytesToHex(SECRET),
+    };
+    const parsed = parseKeyBackup(JSON.stringify(legacyFile), 'preprod');
+    expect(parsed.format).toEqual(KEY_BACKUP_FORMAT);
+    expect(hexToBytes(parsed.secretKey)).toEqual(SECRET);
   });
 });

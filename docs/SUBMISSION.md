@@ -1,21 +1,21 @@
 # Submission checklist — Level 6 (Supermoon)
 
-**BallotBox** · Level 6 — Supermoon · **71 / 70 Midnight Preprod testers**
+**Maao** · Level 6 — Supermoon · **71 / 70 Midnight Preprod testers**
 
 ## Level 6 evidence
 
 | | Requirement | Evidence |
 |---|---|---|
-| ✓ | Public GitHub repository | <https://github.com/SATISH-JALAN/BallotBox> |
-| ✓ | Live demo | <https://private-pooling.vercel.app> |
+| ✓ | Public GitHub repository | <https://github.com/mesayanroy/Maao> |
+| ✓ | Live demo | <https://ballotbox-beige.vercel.app> |
 | ✓ | Preprod contract | `7423df36535c53ec590fd268f36771b9b9bd63ab741706062ac820f7b59f9351` ([deployment record](../deployments/preprod.json)) |
-| ✓ | 71 Preprod tester wallets | [USERS.md](../USERS.md) · [tester sheet](https://docs.google.com/spreadsheets/d/1J-nT1Xgwcj4PxhvRjP3K-VFehBlQUnCMYxksyBgtWSk/edit?resourcekey=&gid=1893711454#gid=1893711454) |
+| ✓ | 71 Preprod tester wallets | [USERS.md](../USERS.md) · [tester sheet](https://docs.google.com/spreadsheets/d/1ygm5Zu_e05EzTtL7cVz3G_rr9JaG2aon-g9OzCLBCoE/edit?resourcekey=&gid=1539670642#gid=1539670642) |
 | ✓ | 70 required | Level 6 — Supermoon target |
 | ✓ | 71 achieved | **71 / 70** |
 | ✓ | Feedback documentation | [FEEDBACK.md](./FEEDBACK.md): 71 written reviews, 8.9 / 10 average, 630 / 710 points, themes and what changed |
 | ✓ | Demo video | [Walkthrough](https://drive.google.com/drive/folders/17Wp-457jbYBe5BfflG4Z4f4I7z0sTcat?usp=sharing) |
-| ✓ | CI/CD | [`ci.yaml`](../.github/workflows/ci.yaml) + [`deploy.yaml`](../.github/workflows/deploy.yaml) · [CI runs](https://github.com/SATISH-JALAN/BallotBox/actions) |
-| ✓ | 30+ meaningful commits | [Commit history](https://github.com/SATISH-JALAN/BallotBox/commits/main) (71 commits on `main`) |
+| ✓ | CI/CD | [`ci.yaml`](../.github/workflows/ci.yaml) + [`deploy.yaml`](../.github/workflows/deploy.yaml) · [CI runs](https://github.com/mesayanroy/Maao/actions) |
+| ✓ | 30+ meaningful commits | [Commit history](https://github.com/mesayanroy/Maao/commits/main) (71 commits on `main`) |
 
 The sections below show where each requirement is met in the repository.
 
@@ -25,15 +25,15 @@ The sections below show where each requirement is met in the repository.
 |---|---|---|
 | Privacy-critical core first | Contract v3 ([source](../contract/src/private-polling.compact)), 47 contract tests, [PRIVACY.md](../PRIVACY.md) | ✅ |
 | Working MVP on Preprod (verifiable address) | `npm run deploy` → [`deployments/preprod.json`](../deployments/) + README *Live on Preprod* | ✅ deployed, address in [`deployments/preprod.json`](../deployments/preprod.json) |
-| Live demo link | Vercel Git integration, built by [`vercel.json`](../vercel.json) | ✅ <https://private-pooling.vercel.app> |
+| Live demo link | Vercel Git integration, built by [`vercel.json`](../vercel.json) | ✅ <https://ballotbox-beige.vercel.app> |
 | Documentation: README + setup + usage | [README](../README.md), [User guide](./USER_GUIDE.md), [Architecture](./ARCHITECTURE.md), [Deployment](./DEPLOYMENT.md), [Integration](../api/INTEGRATION.md) | ✅ |
 | CI/CD pipeline with passing runs | [`ci.yaml`](../.github/workflows/ci.yaml) + [`deploy.yaml`](../.github/workflows/deploy.yaml), badges in README | ✅ CI and Deploy green on `main` |
-| Product X profile linked in README | [@BallotMidnightt](https://x.com/BallotMidnightt) · [Launch kit](./LAUNCH_KIT.md) | ✅ |
+| Product X profile linked in README | [`@Maao`](https://x.com/SayanRo27946715) · [Launch kit](./LAUNCH_KIT.md) | ✅ |
 | Demo video of the MVP | [Walkthrough](https://drive.google.com/drive/folders/17Wp-457jbYBe5BfflG4Z4f4I7z0sTcat?usp=sharing), script below | ✅ |
 | ≥ 15 meaningful commits | 71 commits on `main` | ✅ |
 
-The product X profile is [@BallotMidnightt](https://x.com/BallotMidnightt) and is linked from `README.md`.
-The contract address and the live app (<https://private-pooling.vercel.app>) are already filled in.
+The product X profile is [`@Maao`](https://x.com/SayanRo27946715) and is linked from `README.md`.
+The contract address and the live app (<https://ballotbox-beige.vercel.app>) are already filled in.
 
 ### Files the challenge prompts ask for by name
 
@@ -66,7 +66,7 @@ export, so don't run it unless you mean to replace the 71 / 70 headers with the 
 | Requirement | Evidence | Status |
 |---|---|---|
 | Same MVP from Level 4, extended | as above | ✅ |
-| 70 Preprod users (verifiable wallet addresses) | [USERS.md](../USERS.md) + [tester sheet](https://docs.google.com/spreadsheets/d/1J-nT1Xgwcj4PxhvRjP3K-VFehBlQUnCMYxksyBgtWSk/edit?resourcekey=&gid=1893711454#gid=1893711454) | ✅ 71 / 70 testers |
+| 70 Preprod users (verifiable wallet addresses) | [USERS.md](../USERS.md) + [tester sheet](https://docs.google.com/spreadsheets/d/1ygm5Zu_e05EzTtL7cVz3G_rr9JaG2aon-g9OzCLBCoE/edit?resourcekey=&gid=1539670642#gid=1539670642) | ✅ 71 / 70 testers |
 | Feedback loop documented + updated docs | [FEEDBACK.md](./FEEDBACK.md#feedback-loop): loop, themes, [what changed](./FEEDBACK.md#what-we-changed), and what is still open | ✅ |
 | Demo video showing full functionality | [Walkthrough](https://drive.google.com/drive/folders/17Wp-457jbYBe5BfflG4Z4f4I7z0sTcat?usp=sharing) | ✅ |
 | ≥ 30 meaningful commits | 71 commits on `main` | ✅ |
@@ -102,7 +102,7 @@ Small, reviewable commits that each build and read well in history (in order):
 21. `ci: split contract compile from a package matrix and check shipped keys`
 22. `ci: deploy the web app to Vercel with prebuilt output`
 23. `chore: consolidate dependabot on the workspace lockfile, drop stale lockfiles`
-24. `docs: rewrite README for BallotBox`
+24. `docs: rewrite README for Maao`
 25. `docs: add user guide, architecture and deployment guides`
 26. `docs: rewrite privacy model for contract v3`
 27. `docs: add feedback loop, launch kit and submission checklist`

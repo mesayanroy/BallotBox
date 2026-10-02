@@ -47,7 +47,7 @@ const ELEMENTS: TreeViewElement[] = [
         isSelectable: true,
         name: 'contract',
         children: [
-          { id: 'ballot', isSelectable: true, name: 'ballotbox.compact' },
+          { id: 'ballot', isSelectable: true, name: 'maao.compact' },
           { id: 'verifier', isSelectable: true, name: 'verifier.zk' },
         ],
       },
@@ -395,7 +395,7 @@ export const Hero: React.FC<HeroProps> = ({ primaryLabel, onPrimary }) => {
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75 }}>
                 <FolderIcon sx={{ color: '#38bdf8', fontSize: 16 }} />
                 <Typography sx={{ fontFamily: mono, fontSize: 11.5, fontWeight: 700, color: '#f8fafc' }}>
-                  BallotBox Architecture
+                  Maao Architecture
                 </Typography>
               </Box>
               <Chip

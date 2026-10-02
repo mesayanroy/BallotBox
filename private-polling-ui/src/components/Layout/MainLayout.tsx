@@ -185,7 +185,7 @@ const Footer: React.FC = () => (
           </FooterLink>
           {LINKS.x && (
             <FooterLink href={LINKS.x}>
-              <XIcon sx={{ fontSize: 14, mr: 0.5 }} /> X / Twitter
+              <XIcon sx={{ fontSize: 14, mr: 0.5 }} /> {LINKS.xHandle}
             </FooterLink>
           )}
           <FooterLink href={LINKS.midnight}>Midnight Network</FooterLink>

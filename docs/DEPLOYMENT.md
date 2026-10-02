@@ -84,7 +84,7 @@ path or the other, not both**, or every push deploys twice.
 1. **Create the project.** Install the CLI (`npm i -g vercel`), then:
    ```bash
    cd private-polling-ui
-   vercel link          # create a new project, e.g. "ballotbox"
+   vercel link          # create a new project, e.g. "maao"
    cat .vercel/project.json   # note orgId and projectId
    ```
 2. **Create a token** at <https://vercel.com/account/tokens>.

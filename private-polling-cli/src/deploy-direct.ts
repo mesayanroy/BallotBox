@@ -306,7 +306,7 @@ async function main() {
       secretFile,
       JSON.stringify(
         {
-          format: 'ballotbox-key-backup/v1',
+          format: 'maao-key-backup/v1',
           networkId,
           contractAddress,
           secretKey: toHex(privateState.secretKey),

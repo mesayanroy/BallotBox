@@ -69,7 +69,7 @@ export const errorText = (error: unknown): string => {
 };
 
 export const friendlyError = (error: unknown): string => {
-  console.error('[BallotBox]', error);
+  console.error('[Maao]', error);
   const raw = errorText(error);
   const rule = RULES.find((r) => r.test.test(raw));
   if (!rule) return raw || 'Something went wrong. Please try again.';

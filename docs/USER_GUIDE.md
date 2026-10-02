@@ -1,9 +1,9 @@
-# BallotBox user guide
+# Maao user guide
 
 This guide takes you from nothing installed to a cast vote in about 10 minutes. No
 blockchain experience is needed.
 
-**Live app:** <https://private-pooling.vercel.app> · **Stuck?** [Leave feedback](https://forms.gle/fhvKZZWAUh2z6kGj8)
+**Live app:** <https://ballotbox-beige.vercel.app> · **Stuck?** [Leave feedback](https://forms.gle/d7TDeV5dcVFrKr8y9)
 
 - [What you need](#what-you-need)
 - [Step 1 — Install a wallet](#step-1--install-a-wallet)
@@ -31,7 +31,7 @@ blockchain experience is needed.
    or **[1AM](https://chromewebstore.google.com/detail/1am/bphnkdkcnfhompoegfpgnkidcjfbojjp)**.
 2. Create a new wallet and **write down the recovery phrase**.
 3. In the wallet settings, switch the network to **Preprod**.
-4. Reload BallotBox. Step 1 in the *“New here?”* panel turns green once the wallet is detected.
+4. Reload Maao. Step 1 in the *“New here?”* panel turns green once the wallet is detected.
 
 ## Step 2 — Get free test tokens
 
@@ -47,7 +47,7 @@ Midnight uses two tokens:
 
 ## Step 3 — Set up proving
 
-Every BallotBox action creates a zero-knowledge proof. Your wallet sends it to a **proof server**:
+Every Maao action creates a zero-knowledge proof. Your wallet sends it to a **proof server**:
 
 - **Easiest:** if your wallet settings offer a hosted or remote prover, select it.
 - **Local:** install [Docker](https://www.docker.com/products/docker-desktop/) and run the
@@ -114,7 +114,7 @@ organizer, can decrypt early.
 
 ## Your key and backups
 
-BallotBox creates a secret key **per poll, in your browser**. It proves that you're
+Maao creates a secret key **per poll, in your browser**. It proves that you're
 enrolled, that you're the organizer, or that you're a trustee. It never leaves your device.
 
 - It survives page reloads.

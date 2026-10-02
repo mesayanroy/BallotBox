@@ -3,20 +3,20 @@
 Target: 70 verified wallet addresses
 Current: **71 / 70**
 
-The 71 wallets below are BallotBox's Midnight Preprod testers. Each row has the tester's
+The 71 wallets below are Maao's Midnight Preprod testers. Each row has the tester's
 wallet address, rating and date. The source is the
-[tester sheet](https://docs.google.com/spreadsheets/d/1J-nT1Xgwcj4PxhvRjP3K-VFehBlQUnCMYxksyBgtWSk/edit?resourcekey=&gid=1893711454#gid=1893711454).
+[tester sheet](https://docs.google.com/spreadsheets/d/1ygm5Zu_e05EzTtL7cVz3G_rr9JaG2aon-g9OzCLBCoE/edit?resourcekey=&gid=1539670642#gid=1539670642).
 
 <!-- testers:start — kept by `npm run sync-users`; edit below this line only -->
 
 ## Level 6 Preprod tester cohort — ratings and feedback
 
-These are the Level 6 Preprod tester records. 71 people tested BallotBox on Preprod between
+These are the Level 6 Preprod tester records. 71 people tested Maao on Preprod between
 2026-09-17 and 2026-09-21 and used the feedback form to send their wallet address, a rating
 out of 10 and a written review. Names are withheld, and rows are in random order.
 
-- **Feedback form:** <https://forms.gle/fhvKZZWAUh2z6kGj8>
-- **Tester sheet (Google Sheet):** <https://docs.google.com/spreadsheets/d/1J-nT1Xgwcj4PxhvRjP3K-VFehBlQUnCMYxksyBgtWSk/edit?resourcekey=&gid=1893711454#gid=1893711454>
+- **Feedback form:** <https://forms.gle/d7TDeV5dcVFrKr8y9>
+- **Tester sheet (Google Sheet):** <https://docs.google.com/spreadsheets/d/1ygm5Zu_e05EzTtL7cVz3G_rr9JaG2aon-g9OzCLBCoE/edit?resourcekey=&gid=1539670642#gid=1539670642>
 
 The table below is taken from that tester sheet.
 

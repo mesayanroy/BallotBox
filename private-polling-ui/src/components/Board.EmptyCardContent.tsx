@@ -3,7 +3,7 @@ import { type ContractAddress } from '@midnight-ntwrk/midnight-js-protocol/compa
 import { Box, Button, CardContent, Divider, Typography } from '@mui/material';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutlined';
 import LinkIcon from '@mui/icons-material/Link';
-import HowToVoteIcon from '@mui/icons-material/HowToVote';
+import { BrandMark } from './Layout/BrandMark';
 import { TextPromptDialog } from './TextPromptDialog';
 import { tokens } from '../config/theme';
 
@@ -31,7 +31,9 @@ export const EmptyCardContent: React.FC<Readonly<EmptyCardContentProps>> = ({
   return (
     <CardContent sx={{ p: 3, display: 'flex', flexDirection: 'column', gap: 2 }}>
       <Box sx={{ textAlign: 'center', pt: 1 }}>
-        <HowToVoteIcon sx={{ fontSize: 48, color: tokens.inkFaint, mb: 1 }} />
+        <Box sx={{ display: 'flex', justifyContent: 'center', mb: 1 }}>
+          <BrandMark size={48} />
+        </Box>
         <Typography variant="body1" sx={{ fontWeight: 700, color: tokens.ink }}>
           Create your own poll
         </Typography>

@@ -1,11 +1,11 @@
-# Product Proposal — BallotBox
+# Product Proposal — Maao
 
 > Drafted from the design this repository implements. Read it once and correct anything
 > that does not match how you would pitch it; it is your product, not the code's.
 
 ## What is the product, and who uses it?
 
-BallotBox runs **anonymous, verifiable polls**. An organizer starts a poll, voters cast
+Maao runs **anonymous, verifiable polls**. An organizer starts a poll, voters cast
 encrypted ballots, and the result is published only when every trustee has contributed a
 decryption share — after which anyone can re-derive the counts from public chain data and
 confirm they match the encrypted ballots.

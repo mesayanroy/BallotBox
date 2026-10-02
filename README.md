@@ -1,7 +1,7 @@
 # Maao — private, verifiable polls on Midnight 🗳️
 
-[![CI](https://github.com/SATISH-JALAN/BallotBox/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/SATISH-JALAN/BallotBox/actions/workflows/ci.yaml)
-[![Deploy](https://github.com/SATISH-JALAN/BallotBox/actions/workflows/deploy.yaml/badge.svg?branch=main)](https://github.com/SATISH-JALAN/BallotBox/actions/workflows/deploy.yaml)
+[![CI](https://github.com/mesayanroy/Maao/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/mesayanroy/Maao/actions/workflows/ci.yaml)
+[![Deploy](https://github.com/mesayanroy/Maao/actions/workflows/deploy.yaml/badge.svg?branch=main)](https://github.com/mesayanroy/Maao/actions/workflows/deploy.yaml)
 [![Network: Preprod](https://img.shields.io/badge/Midnight-Preprod-2f6b4b)](#live-on-preprod)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](./LICENSE)
 
@@ -14,14 +14,14 @@ ballots, so nobody has to trust the organizer.
 |---|---|
 | 🌐 **Live app** | **<https://ballotbox-beige.vercel.app/>** |
 | 📜 **Preprod contract** | `7423df36535c53ec590fd268f36771b9b9bd63ab741706062ac820f7b59f9351` ([deployment record](./deployments/preprod.json)) |
-| 𝕏 **Product profile** | **[@BallotMidnightt](https://x.com/BallotMidnightt)** |
+| 𝕏 **Product profile** | **[`@Maao`](https://x.com/SayanRo27946715)** |
 | 🎬 **Demo video** | [Watch the walkthrough](https://drive.google.com/drive/folders/17Wp-457jbYBe5BfflG4Z4f4I7z0sTcat?usp=sharing) |
 | 🙋 **Level 6** | **71 / 70** Midnight Preprod testers — [USERS.md](./USERS.md) · [feedback](./docs/FEEDBACK.md) · [submission](./docs/SUBMISSION.md) |
-| 💬 **Give feedback** | [Feedback form](https://forms.gle/d7TDeV5dcVFrKr8y9) · [tester sheet](https://docs.google.com/spreadsheets/d/1J-nT1Xgwcj4PxhvRjP3K-VFehBlQUnCMYxksyBgtWSk/edit?resourcekey=&gid=1893711454#gid=1893711454) · [how feedback is used](./docs/FEEDBACK.md) |
+| 💬 **Give feedback** | [tester sheet](https://docs.google.com/spreadsheets/d/1ygm5Zu_e05EzTtL7cVz3G_rr9JaG2aon-g9OzCLBCoE/edit?resourcekey=&gid=1539670642#gid=1539670642) · [Feedback form](https://forms.gle/d7TDeV5dcVFrKr8y9) · [how feedback is used](./docs/FEEDBACK.md) |
 | 📖 **Docs** | [User guide](./docs/USER_GUIDE.md) · [Architecture](./docs/ARCHITECTURE.md) · [Privacy model](./PRIVACY.md) · [Deployment](./docs/DEPLOYMENT.md) · [Integration](./api/INTEGRATION.md) |
 
 <p align="center">
-  <a href="https://ballotbox-beige.vercel.app"><img src="./docs/screenshots/landing-desktop.png" alt="BallotBox landing page: the featured Preprod poll with its live turnout, and the five-minute setup checklist" width="820"></a>
+  <a href="https://ballotbox-beige.vercel.app"><img src="./docs/screenshots/landing-desktop.png" alt="Maao landing page: the featured Preprod poll with its live turnout, and the five-minute setup checklist" width="820"></a>
 </p>
 
 > **Try it in five minutes:** open the live app, follow *“New here?”*, press **Join this
@@ -61,7 +61,7 @@ Online voting usually forces a bad choice:
 - **Trust a server.** The operator can see every vote, and can change the count.
 - **Vote on a public blockchain.** Anyone can see how you voted, forever.
 
-BallotBox uses Midnight's zero-knowledge smart contracts to avoid both. Each ballot stays
+Maao uses Midnight's zero-knowledge smart contracts to avoid both. Each ballot stays
 secret, and the result is still publicly verifiable. It suits DAO signalling, community
 temperature checks, team retros and student councils: any vote where people should be free
 to answer honestly.
@@ -117,7 +117,7 @@ Check it yourself, with no wallet: `npm run verify -- 7423df36535c53ec590fd268f3
 
 ## Live Demo
 
-<https://private-pooling.vercel.app> — the featured poll runs on the contract above.
+<https://ballotbox-beige.vercel.app> — the featured poll runs on the contract above.
 
 ## Privacy Model
 
@@ -155,7 +155,7 @@ Check it yourself, with no wallet: `npm run verify -- 7423df36535c53ec590fd268f3
 | Network | Midnight **Preprod** |
 | Contract address | `7423df36535c53ec590fd268f36771b9b9bd63ab741706062ac820f7b59f9351` |
 | Deploy transaction | see [`deployments/preprod.json`](./deployments/preprod.json) |
-| Web app | <https://private-pooling.vercel.app> |
+| Web app | <https://ballotbox-beige.vercel.app> |
 | Contract source | [`contract/src/private-polling.compact`](./contract/src/private-polling.compact) (Compact 0.23 / compiler 0.31.0) |
 | Tester list | [USERS.md](./USERS.md): 71 / 70 Preprod testers |
 | Check-in export | [`deployments/participants-preprod.json`](./deployments/participants-preprod.json) (regenerate with `npm run export-participants -- <address>`) |
@@ -193,8 +193,8 @@ On Windows you only need WSL with an Ubuntu distro, plus `unzip` inside it (`wsl
 ### 1 · Install, compile, test
 
 ```bash
-git clone https://github.com/mesayanroy/Maao.git
-cd Maao
+git clone https://github.com/mesayanroy/BallotBox.git
+cd BallotBox
 npm ci --legacy-peer-deps   # one install for all workspaces
 npm run compact             # compile the contract → contract/src/managed (≈1 min)
 npm run build               # contract → api → cli → ui
@@ -277,7 +277,7 @@ npm run verify -- <addr>  # recheck a published tally from public chain data alo
 ## Project structure
 
 ```
-BallotBox/
+Maao/
 ├── contract/                 Compact smart contract + simulator tests
 │   └── src/private-polling.compact · witnesses.ts · test/
 ├── api/                      Shared TypeScript API (used by UI and CLI) + tally decryption
@@ -401,16 +401,16 @@ Top changes made before inviting testers (iteration 0):
 | Level | **Level 6 — Supermoon** |
 | Preprod testers required | **70** |
 | Preprod testers achieved | **71 / 70** (average rating **8.9 / 10**, median 9) |
-| Tester wallets, ratings and dates | [USERS.md](./USERS.md) · [tester sheet](https://docs.google.com/spreadsheets/d/1J-nT1Xgwcj4PxhvRjP3K-VFehBlQUnCMYxksyBgtWSk/edit?resourcekey=&gid=1893711454#gid=1893711454) |
+| Tester wallets, ratings and dates | [tester sheet](https://docs.google.com/spreadsheets/d/1ygm5Zu_e05EzTtL7cVz3G_rr9JaG2aon-g9OzCLBCoE/edit?resourcekey=&gid=1539670642#gid=1539670642) (71 rows, oldest first · [CSV](./docs/tester-sheet.csv)) · [USERS.md](./USERS.md) |
 | Written feedback and iterations | [docs/FEEDBACK.md](./docs/FEEDBACK.md) |
 | Submission evidence | [docs/SUBMISSION.md](./docs/SUBMISSION.md) |
-| Live demo | <https://private-pooling.vercel.app> |
+| Live demo | <https://ballotbox-beige.vercel.app> |
 | Preprod contract | `7423df36535c53ec590fd268f36771b9b9bd63ab741706062ac820f7b59f9351` ([deployment record](./deployments/preprod.json)) |
-| CI/CD | [CI](https://github.com/SATISH-JALAN/BallotBox/actions/workflows/ci.yaml) · [Deploy](https://github.com/SATISH-JALAN/BallotBox/actions/workflows/deploy.yaml) |
+| CI/CD | [CI](https://github.com/mesayanroy/Maao/actions/workflows/ci.yaml) · [Deploy](https://github.com/mesayanroy/Maao/actions/workflows/deploy.yaml) |
 
 ## Product X Profile
 
-**[@BallotMidnightt](https://x.com/BallotMidnightt)** — launch posts, brand brief
+**[`@Maao`](https://x.com/SayanRo27946715)** — launch posts, brand brief
 and recruitment messages are in the [launch kit](./docs/LAUNCH_KIT.md).
 
 ## Brand Assets
@@ -418,7 +418,7 @@ and recruitment messages are in the [launch kit](./docs/LAUNCH_KIT.md).
 Palette, tagline, bio and banner concept: [launch kit § brand brief](./docs/LAUNCH_KIT.md#6-brand-brief).
 | Logo (400 × 400) | X banner (1500 × 500) |
 |---|---|
-| <img src="./docs/brand/logo.png" alt="BallotBox logo: a ticked ballot going into a box marked with a hash" width="160"> | <img src="./docs/brand/x-banner.png" alt="BallotBox X banner: the ticked ballot the voter sees next to the hashed ballot the chain sees" width="480"> |
+| <img src="./docs/brand/logo.png" alt="Maao logo: a teal-to-indigo M with a sealed-ballot dot on a midnight tile" width="160"> | <img src="./docs/brand/x-banner.png" alt="Maao X banner: the ballot the voter sees next to the ciphertext the chain sees" width="480"> |
 
 Source SVGs and PNG exports are in [`docs/brand/`](./docs/brand/).
 

@@ -3,8 +3,8 @@
 | You want to… | Go here |
 |---|---|
 | Set up a wallet, get tokens, vote | [User guide](./docs/USER_GUIDE.md) and its [FAQ](./docs/USER_GUIDE.md#faq) |
-| Tell us what worked or didn't | [Feedback form](https://forms.gle/fhvKZZWAUh2z6kGj8) (or the **Feedback** button in the app) |
-| Report a bug | [Bug report](https://github.com/SATISH-JALAN/BallotBox/issues/new?template=bug-report.md) |
+| Tell us what worked or didn't | [Feedback form](https://forms.gle/d7TDeV5dcVFrKr8y9) (or the **Feedback** button in the app) |
+| Report a bug | [Bug report](https://github.com/mesayanroy/Maao/issues/new?template=bug-report.md) |
 | Report a security issue | **Privately**, see [SECURITY.md](./SECURITY.md) |
 | Run or deploy it yourself | [README quickstart](./README.md#quickstart--run-it-locally) and [deployment guide](./docs/DEPLOYMENT.md) |
 | Build on the API | [Integration guide](./api/INTEGRATION.md) |

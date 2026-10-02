@@ -5,6 +5,7 @@ import { MainLayout, Board } from './components';
 import { FeaturedPoll } from './components/FeaturedPoll';
 import { FeedbackButton } from './components/FeedbackButton';
 import { GettingStarted } from './components/GettingStarted';
+import { AppToolkit } from './components/AppToolkit';
 import { Hero } from './components/landing/Hero';
 import { Section } from './components/landing/Section';
 import { Faq, Features } from './components/landing/Sections';
@@ -21,7 +22,7 @@ const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ b
  *
  * Landing flow:
  * 1. Hero with Magic UI VideoText, Highlighter, FileTree (Tree), & cosmic visuals
- * 2. Active app section (Featured poll, deployments, or poll creation)
+ * 2. Active app section (Featured poll, deployments, or poll creation) on a grey band, plus the toolkit cards
  * 3. Features with ZK Security showcase card
  * 4. Interactive End-to-End ZK Workflow Section
  * 5. FAQ
@@ -53,7 +54,7 @@ const App: React.FC = () => {
       <Section
         id="app"
         testId="app"
-        tone="surface"
+        tone="grey"
         eyebrow="✦ Live DApp Console"
         title={boardDeployments.length > 0 ? 'Your polls' : 'Vote, or run your own poll'}
         intro="Connect a Midnight wallet on Preprod to join a poll, cast a ballot or start a new one. New to Midnight? The checklist gets you set up in about five minutes."
@@ -76,6 +77,7 @@ const App: React.FC = () => {
             <Board />
           </Box>
         </Box>
+        <AppToolkit />
       </Section>
 
       <Features />
