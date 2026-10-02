@@ -17,6 +17,8 @@ project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   checklist, trustee flow, poll lifecycle, privacy split, key safety, verification and circuit costs.
 - Product X profile is now [@Maao](https://x.com/SayanRo27946715).
 - Tester sheet moved to a new Google Sheet, ordered oldest first; import file in `docs/tester-sheet.csv`.
+- README rewritten with every section in tables. All repository links now point to
+  `github.com/mesayanroy/Maao`; the dead `private-pooling.vercel.app` links now point to the live app.
 
 ## [0.3.0] — 2026-09-14 — Level 4 MVP: “Maao”
 
