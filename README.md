@@ -1,4 +1,4 @@
-# BallotBox — private, verifiable polls on Midnight 🗳️
+# Maao — private, verifiable polls on Midnight 🗳️
 
 [![CI](https://github.com/SATISH-JALAN/BallotBox/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/SATISH-JALAN/BallotBox/actions/workflows/ci.yaml)
 [![Deploy](https://github.com/SATISH-JALAN/BallotBox/actions/workflows/deploy.yaml/badge.svg?branch=main)](https://github.com/SATISH-JALAN/BallotBox/actions/workflows/deploy.yaml)
