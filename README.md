@@ -29,7 +29,7 @@ so nobody has to trust the organizer.
 | 💬 **Give feedback** | [Feedback form](https://forms.gle/d7TDeV5dcVFrKr8y9) · [how feedback is used](./docs/FEEDBACK.md) |
 | 🙋 **Level 6** | **71 / 70** Midnight Preprod testers, average **8.9 / 10** · [USERS.md](./USERS.md) · [submission](./docs/SUBMISSION.md) |
 | 𝕏 **Product profile** | **[`@Maao`](https://x.com/SayanRo27946715)** |
-| 🎬 **Demo video** | [Watch the walkthrough](https://drive.google.com/drive/folders/17Wp-457jbYBe5BfflG4Z4f4I7z0sTcat?usp=sharing) |
+| 🎬 **Demo video** | [Watch the walkthrough](https://drive.google.com/open?id=10RG8omWWyV9cT8wYPhYEsyCfuhDYz4bl&usp=drive_fs) |
 | 💻 **Source** | [github.com/mesayanroy/Maao](https://github.com/mesayanroy/Maao) |
 | 📖 **Docs** | [User guide](./docs/USER_GUIDE.md) · [Architecture](./docs/ARCHITECTURE.md) · [Privacy model](./PRIVACY.md) · [Deployment](./docs/DEPLOYMENT.md) · [Integration](./api/INTEGRATION.md) |
 
